@@ -1,3 +1,4 @@
+//task 1
 function calcArea() {
     let figure = prompt("Which geometric figure do you need to find the area of? Please, input t for a triangle, z for a trapezoid, c for a circle, s for a square or r for a rectangle.")
     switch (figure) {
@@ -76,3 +77,10 @@ function areaR() {
         error();
     } else return alert(`The area of the given rectangle equals to ${result}.`);
 }
+
+//task 2
+let number;
+do {
+    number = +prompt("Input a number for a chance to win 1000$!");
+} while (number !== 7)
+alert("YOU WON 1000$");
