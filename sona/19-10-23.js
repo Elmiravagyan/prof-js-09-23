@@ -29,7 +29,7 @@ function areaT() {
     let result = b*h/2;
     if(isNaN(result) || result <= 0) {
         error();
-    } else return alert(`The area of the given triangle equals to ${result}.`)
+    } else return alert(`The area of the given triangle equals to ${result}.`);
 }
 
 function error() {
@@ -40,3 +40,39 @@ function error() {
             
 }
 
+function areaZ() {
+    let param = prompt("Input the bases and the height of the trapezoid! (e.g. 2,4,5) In case of a decimal number, please, use a point as the decimal separator (e.g. 2.5, 4.2, 5.6)");
+    let a = param.split(",")[0];
+    let b = param.split(",")[1];
+    let h = param.split(",")[2];
+    let result = (+a + +b)*h/2;
+    if(isNaN(result) || result <= 0) {
+        error();
+    } else return alert(`The area of the given trapezoid equals to ${result}.`);
+}
+
+function areaC() {
+    let r = prompt("Input the radius of the circle! (e.g. 2) In case of a decimal number, please, use a point as the decimal separator (e.g. 2.5)");
+    let result = 3.14*r**2;
+    if(isNaN(result) || result <= 0) {
+        error();
+    } else return alert(`The area of the given circle equals to ${result}.`);
+}
+
+function areaS() {
+    let a = prompt("Input the side of the square! (e.g. 2) In case of a decimal number, please, use a point as the decimal separator (e.g. 2.5)");
+    let result = a**2;
+    if(isNaN(result) || result <= 0) {
+        error();
+    } else return alert(`The area of the given square equals to ${result}.`);
+}
+
+function areaR() {
+    let param = prompt("Input the length and the width of the rectangle! (e.g. 2,4) In case of a decimal number, please, use a point as the decimal separator (e.g. 2.5, 4.2)");
+    let l = param.split(",")[0];
+    let w = param.split(",")[1];
+    let result = l*w;
+    if(isNaN(result) || result <= 0) {
+        error();
+    } else return alert(`The area of the given rectangle equals to ${result}.`);
+}
