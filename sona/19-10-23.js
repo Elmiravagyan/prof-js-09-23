@@ -200,3 +200,17 @@ function randColor(arr) {
         return item;
     })
 }
+
+//3.3
+function calcBalance(arr) {
+  let result = 0;
+  arr.forEach((item) => {
+    let number = item["balance"].split("");
+    number = number.filter((elem) => {
+      return elem !== "$" && elem !== ",";
+    })
+    number = number.join("");
+    result += +number;
+  })
+  return result;
+}
