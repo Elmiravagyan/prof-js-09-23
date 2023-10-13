@@ -214,3 +214,17 @@ function calcBalance(arr) {
   })
   return result;
 }
+
+//3.4
+let theUser = users.find((item) => {
+  return item["name"] === "Diann Tillman"
+})
+let balanceArr = theUser["balance"].split("");
+balanceArr = balanceArr.filter((item)=>{
+  return item !== "$" && item !== ",";
+})
+balanceArr = balanceArr.join("");
+theUser["balance"] = `$${+balanceArr + 1000}`;
+
+//3.5
+let Phyllis = users.find(item => item["name"] === "Phyllis Morin");
