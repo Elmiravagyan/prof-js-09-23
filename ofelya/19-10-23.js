@@ -1,3 +1,17 @@
+
+/*
+2. Write a program that will ask a user for input, if the input is “7” alert
+“YOU WON 1000$” If not ask the user the same question again.
+This process should happen until the user finally enters “7”. */
+
+while (true) {
+  let input = prompt("Write a number")
+  if (input ==7) {alert("YOU WON 1000$")
+  break;
+    } else {
+  alert("Try again")
+}
+};
 /* 
 3. We have a users list, write a program that
 Will filter users whose balance is between 2000-3000
