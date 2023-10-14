@@ -87,3 +87,86 @@ function cpp() {
 cpp();
 
 var mess = 'Hi guys';
+
+function calc(first, sign) {
+    return function(second) {
+        switch(sign) {
+            case '+': return first + second;
+            case '-': return first - second;
+            case '/': return first / second;
+            case '*': return first * second;
+
+        }
+    }
+}
+
+let sum10 = calc(10, '+');
+
+// version 2
+// function calc(first, second) {
+//     return function(sign) {
+//         switch(sign) {
+//             case '+': return first + second;
+//             case '-': return first - second;
+//             case '/': return first / second;
+//             case '*': return first * second;
+//
+//         }
+//     }
+// };
+
+// version 3
+
+// function calc(first) {
+//     return function(sign) {
+//         return function(second) {
+//             switch(sign) {
+//                 case '+': return first + second;
+//                 case '-': return first - second;
+//                 case '/': return first / second;
+//                 case '*': return first * second;
+//
+//             }
+//         }
+//     }
+//
+// }
+// calc(1)('+')(2);
+
+// Counter
+// function createCounter() {
+// //     let count = 0;
+// //     return function increment() {
+// //         return ++count;
+// //     }
+// // }
+// //
+// // let counter = createCounter();
+// // counter()
+
+
+// {
+//     let p = function g() {
+//         return 1
+//     }
+//     // g(); // 1
+// }
+//
+// // g(); //1, error
+// p(); //error
+
+
+
+// function kk() {
+//     console.log('first',g);
+// }
+//
+// let g = 5;
+// function ll() {
+//     let g = 10;
+//     kk();
+//     console.log('second',g);
+// }
+//
+//
+// ll(); // 5, 10 , // error, 10, //
