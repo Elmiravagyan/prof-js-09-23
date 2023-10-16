@@ -38,15 +38,7 @@ while (true) {
   alert("Try again")
 }
 };
-/* 
-3. We have a users list, write a program that
-Will filter users whose balance is between 2000-3000
-Create a new array with given users and add a random color property to each user
-Calculate the entire balance of all users
-Add 1000$ to the balance of the user, whose name is Diann Tillman
-Find a user whose name is Phyllis Morin
- 
-*/
+
 
 
 /* 
@@ -162,7 +154,7 @@ let filtered = users.filter(item => {
   let arrOfNum = item['balance'].split('');
     //console.log(arr)
   let number= arrOfNum.filter(char => {
-    return char !== "$" && char !== ","
+    return !isNaN(char)
       
   })
   number = number.join('');
@@ -185,7 +177,7 @@ let sum = 0
 users.forEach(item => {
   let arrOfNum = item['balance'].split('');
   let number = arrOfNum.filter(char => {
-      return char !== "$" && char !== ","
+      return !isNaN(char)
   })
   number = number.join("")
     sum += +number
@@ -199,7 +191,7 @@ users.forEach(item => {
       users.forEach(item => {
         let arrOfNum = item['balance'].split('');
         let number = arrOfNum.filter(char => {
-            return char !== "$" && char !== ","
+            return !isNaN(char)
         })
         number = number.join("")
       })
