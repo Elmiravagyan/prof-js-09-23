@@ -18,9 +18,34 @@ subStr("Hello", "o") //true
 subStr("Kill", "lolo") //false
 // Write a JavaScript function that accepts a string as a parameter and converts the first letter of each word of the string in the upper case.
 // EX: ‘i love you’ => ‘I Love You’, (use str.split function)
+function convertString(string) {
+    let splited = string.split(' ');
+    console.log(splited) //['I', 'love', 'you']
+    let upper = splited.map(item => item[0].toUpperCase() + item.substr(1))
+    console.log(upper) //['I', 'Love', 'You']
+    let result = upper.join(" ")
+    return result
+}
+convertString("I love you")
+
+'I Love You'
+
 // Write a JavaScript function that accepts a string as a parameter and find the longest word within the string.
 //    Example string : 'Web Development Tutorial'
 // Expected Output : 'Development'
+function longestWord(string) {
+    let splited = string.split(' ')
+    //console.log(splited)
+    let wordLength = 1
+    let word;
+    splited.forEach(item => {
+       if (item.length > wordLength) {
+           wordLength = item.length;
+           word = item;
+       }
+    })
+    return word
+}
 // Write a JS function, which returns the sum of two numbers
 function sum (a, b) {
     return a + b 
