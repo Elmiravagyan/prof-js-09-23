@@ -74,4 +74,31 @@ function calculator(a, b, sign) {
 // Write a JavaScript function that accepts a string as a parameter and finds the longest word with the different letters.
 // EX: asbdasbabasafdyia -> safdyi
 
+//version 1
+function longest(string) {
+    let splited = string.split('');
+    console.log(splited); //['a', 's', 'b', 'd', 'a', 's', 'b', 'a', 'b', 'a', 's', 'a', 'f', 'd', 'y', 'i', 'a']
+    let filtered =  splited.filter((item, index) => splited.indexOf(item) === index);
+    console.log(filtered); // ['a', 's', 'b', 'd', 'f', 'y', 'i']
+    return filtered.join('');
+}
+
+longest("asbdasbabasafdyia") 
+'asbdfyi'
+
+//version 2
+
+function longest(string) {
+    let splited = string.split('');
+    //console.log(splited)
+    let newArray= [];
+    splited.forEach((item) => {
+        if (!newArray.includes(item)) {
+            newArray.push(item);
+        }
+    });
+    return newArray.join('')
+}
+longest("asbdasbabasafdyia") 
+'asbdfyi'
 
