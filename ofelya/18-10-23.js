@@ -22,11 +22,11 @@ NaN
 let newUsrs = usrs.map(item => Object.assign({}, item));
 
 // Write a function that will create constant objects.
-function consObj(obj) {
-    let newObj = {}
-    return Object.freeze(obj)
-    }
 
+    function constObj(obj) {
+      let newObj = Object.freeze(obj)
+      return newObj;
+  }
 // Write a function that generates users with name, surname, and age
 function people (users) {
     function users(name, surname, age) {
@@ -172,6 +172,19 @@ function toNumber(string, sign) {
    
 };
 users.findLast(item => item.gender === 'female' && toNumber(item.balance) > 2800)
+
+//version 2
+let filtered = users.findLast(item => {
+  let arrOfNum = item.balance.split('');
+    //console.log(arr)
+  let number= arrOfNum.filter(char => {
+    return !isNaN(char)
+      
+  })
+  number = number.join('');
+    //console.log(number)
+ return  (item.gender === 'female' && number > 2800)
+})
 
 // Insert a new user from users array doc (name user5 in the doc) at the 5th index.
 let user5 =   {
