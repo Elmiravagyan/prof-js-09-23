@@ -151,7 +151,7 @@ let users =
 
 // 3.1
 let filtered = users.filter(item => {
-  let arrOfNum = item['balance'].split('');
+  let arrOfNum = item.balance.split('');
     //console.log(arr)
   let number= arrOfNum.filter(char => {
     return !isNaN(char)
@@ -175,7 +175,7 @@ users.forEach(item => {
 //3.3
 let sum = 0
 users.forEach(item => {
-  let arrOfNum = item['balance'].split('');
+  let arrOfNum = item.balance.split('');
   let number = arrOfNum.filter(char => {
       return !isNaN(char)
   })
@@ -187,9 +187,9 @@ users.forEach(item => {
 //3.4
 
    let user1 = users.find(item=> {
-    if (item['name'] == "Diann Tillman") {
+    if (item.name == "Diann Tillman") {
       users.forEach(item => {
-        let arrOfNum = item['balance'].split('');
+        let arrOfNum = item.balance.split('');
         let number = arrOfNum.filter(char => {
             return !isNaN(char)
         })
@@ -201,4 +201,4 @@ users.forEach(item => {
 
 
 //3.5
-let user = users.find (item => item["name"] = "Phyllis Morin")
+let user = users.find (item => item.name = "Phyllis Morin")

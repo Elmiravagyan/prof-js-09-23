@@ -1,6 +1,14 @@
 // FUNCTIONS
 // Write a JavaScript function that reverses a number
-
+function reversedNumber(number) {
+    let string = number.toString()
+let arr = string.split('');
+let reversed = arr.reverse();
+let reversNum = reversed.join('');
+    return +reversNum;
+}
+reversedNumber(456789)
+987654
 
 // Write a JavaScript function that generates all combinations of a string
 
@@ -74,4 +82,31 @@ function calculator(a, b, sign) {
 // Write a JavaScript function that accepts a string as a parameter and finds the longest word with the different letters.
 // EX: asbdasbabasafdyia -> safdyi
 
+//version 1
+function longest(string) {
+    let splited = string.split('');
+    console.log(splited); //['a', 's', 'b', 'd', 'a', 's', 'b', 'a', 'b', 'a', 's', 'a', 'f', 'd', 'y', 'i', 'a']
+    let filtered =  splited.filter((item, index) => splited.indexOf(item) === index);
+    console.log(filtered); // ['a', 's', 'b', 'd', 'f', 'y', 'i']
+    return filtered.join('');
+}
+
+longest("asbdasbabasafdyia") 
+'asbdfyi'
+
+//version 2
+
+function longest(string) {
+    let splited = string.split('');
+    //console.log(splited)
+    let newArray= [];
+    splited.forEach((item) => {
+        if (!newArray.includes(item)) {
+            newArray.push(item);
+        }
+    });
+    return newArray.join('')
+}
+longest("asbdasbabasafdyia") 
+'asbdfyi'
 
