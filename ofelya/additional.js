@@ -1,6 +1,14 @@
 // FUNCTIONS
 // Write a JavaScript function that reverses a number
-
+function reversedNumber(number) {
+    let string = number.toString()
+let arr = string.split('');
+let reversed = arr.reverse();
+let reversNum = reversed.join('');
+    return +reversNum;
+}
+reversedNumber(456789)
+987654
 
 // Write a JavaScript function that generates all combinations of a string
 
