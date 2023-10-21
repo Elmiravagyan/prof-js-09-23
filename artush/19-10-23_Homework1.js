@@ -2,45 +2,45 @@
 //11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// let figureName = prompt("Enter name of figure")
+let figureName = prompt("Enter name of figure")
 
-// function AreaOfTriangle (base , heigth){
-//     return (base * heigth) / 2
-// }
+function AreaOfTriangle (base , heigth){
+    return (base * heigth) / 2
+}
 
-// function AreaOfCircle (radius){
-//     return 3.14 * (radius * radius)
-// }
+function AreaOfCircle (radius){
+    return 3.14 * (radius * radius)
+}
 
-// function AreaOfSquare (side){
-//     return side * side 
-// }
+function AreaOfSquare (side){
+    return side * side 
+}
 
-// function AreaOfRectangle (width , length){
-//     return width * length 
-// }
+function AreaOfRectangle (width , length){
+    return width * length 
+}
 
-// switch(figureName){
-//     case 'triangle':
-//         let base = prompt("Enter the base of the triangle")
-//         let heigth = prompt("Enter the heigth of the triangle")
-//         console.log(AreaOfTriangle(base , heigth))
-//         break
-//     case 'circle':
-//         let radius = prompt("Enter the radius of the circle")
-//         console.log(AreaOfCircle(radius))
-//         break
-//     case 'square' :
-//         let side = prompt("Enter the side of the square")
-//         console.log(AreaOfSquare(side))
-//         break
-//     case 'rectangle' :
-//         let width = prompt("Enter the width of the rectangle")
-//         let length = prompt("Enter the length of the rectangle")
-//         console.log(AreaOfRectangle(width , length))
-//         break
-//     default : "You entered incorrect name of figure , Try again !!!!"
-// }
+switch(figureName){
+    case 'triangle':
+        let base = prompt("Enter the base of the triangle")
+        let heigth = prompt("Enter the heigth of the triangle")
+        console.log(AreaOfTriangle(base , heigth))
+        break
+    case 'circle':
+        let radius = prompt("Enter the radius of the circle")
+        console.log(AreaOfCircle(radius))
+        break
+    case 'square' :
+        let side = prompt("Enter the side of the square")
+        console.log(AreaOfSquare(side))
+        break
+    case 'rectangle' :
+        let width = prompt("Enter the width of the rectangle")
+        let length = prompt("Enter the length of the rectangle")
+        console.log(AreaOfRectangle(width , length))
+        break
+    default : "You entered incorrect name of figure , Try again !!!!"
+}
 
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -48,16 +48,16 @@
 /////////////////////////////////////////////////////////////////////////////////////
 
 
-// let isSeven = false
+let isSeven = false
 
-// do {
-//     let input = +prompt("You have chance to win 1000$ , please enter random numbers")
-//     if(input === 7){
-//         isSeven = true 
-//     }
-// } while (isSeven === false)
+do {
+    let input = +prompt("You have chance to win 1000$ , please enter random numbers")
+    if(input === 7){
+        isSeven = true 
+    }
+} while (isSeven === false)
 
-// console.log("YOU WON 1000$")
+console.log("YOU WON 1000$")
 
 ////////////////////////////////////////////////////////////////////////////////////////
 //33333333333333333333333333333333333333333333333333333333333333333333333333333333333333

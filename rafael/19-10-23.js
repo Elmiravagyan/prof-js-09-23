@@ -166,3 +166,32 @@ if (person) {
 
 //task 1
 
+let figures = prompt('enter s for square,c for circle,t for triangle,r for rectangle,z for trapezoid')
+
+function calcArea(calc) {
+  let area = 0
+  switch (calc){
+    case 's':
+      let side = +prompt('side length of the square')
+      area = side * side
+    break;
+    case 'c':
+      let radius = +prompt('radius of the circle')
+      area = 3.14 * (radius * radius)
+      break;
+      case 't':
+        let base = +prompt('base of the triangle')
+        let heigth = +prompt('heigth of the triangle')
+        area = (base * heigth) / 2
+        break;
+        case 'r':
+          let length = +prompt('length of the rectangle')
+          let width = +prompt('width of the rectangle')
+          area = length * width
+          break;
+          default: 
+          return 'try again'
+  }
+  return area
+}
+console.log(calcArea(figures))
