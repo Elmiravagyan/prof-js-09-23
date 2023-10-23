@@ -57,60 +57,29 @@ function factorial(num) {
 //task3 done
 
 function includesStr(str, sub) {
-    if(str.includes(sub) === true) {
-        return true;
-    }
-    return false;
-}
-
-// includesStr('Hello', 'lo')
-
-
-/*struggled to make a custom 'includes', 
-came up with the following solutions 
-but they don't work perfectly well */
-
-function includesStr2(str, sub) {
-    let arr = str.split("");
-    let includes = false;
-    arr.forEach((item,index) => {
-        let arr2 = arr.slice();
-        let spliced = arr2.splice(index);
-        //console.log(`spliced ${spliced}`);
-        if(spliced.join("") === sub) {
-            includes = true;
-        }
-    });
-    //console.log(includes)
-    return includes;
-}
-
-//works for ('Hello', 'lo') 
-//but not for ('Hello', 'ell')
-
-function includesStr3(str, sub) {
     let arrMain = str.split("");
     let arrSub = sub.split("");
-    let semple = [];
-    for(let item of arrMain) {
-        for(let elem of arrSub) {
-            if(elem === item) {
-                semple.push(elem);
-                break;
-            }
+    while(true) {
+        let firstChar = arrMain.findIndex((item) => {
+            return item === arrSub[0];
+        });
+        //console.log(`firstChar ${firstChar}`);
+        if(firstChar === -1) {
+            return false;
+        };
+        let lastChar = firstChar + (sub.length-1);
+        let current = arrMain.slice(firstChar, (lastChar+1));
+        //console.log(current);
+        if(current.join("") === sub) {
+            return true;
+        } else {
+            arrMain.splice(firstChar,1);
+            continue;
         }
-    }
-    semple = semple.join("");
-    console.log(semple);
-    if(semple === sub) {
-        return true;
-    } else {
-        return false;
     }
 }
 
-// works for includesStr3('Hello', 'ell')
-// doesn't work for ('Hello', 'lo') 
+//console.log(includesStr('Ananas', 'nas'))
     
 
 //task 4 done
