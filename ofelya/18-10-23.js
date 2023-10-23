@@ -24,14 +24,17 @@ let newUsrs = usrs.map(item => Object.assign({}, item));
 // Write a function that will create constant objects.
 
     function constObj(obj) {
-      let newObj = Object.freeze(obj)
-      return newObj;
+      Object.freeze(obj)
+      return obj;
   }
 // Write a function that generates users with name, surname, and age
-function people (users) {
-    function users(name, surname, age) {
-
-    }
+function gener(name, surname, age) {
+  let user = {
+      name: name,
+      surname: surname,
+      age: age,
+  }
+  return user;
 }
 
 // Write a function that will filter the array from duplicates
