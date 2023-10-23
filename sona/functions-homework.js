@@ -168,4 +168,24 @@ function calc(a,b,sign) {
     }
 }
 
-//extra 2
+//extra 2 done
+
+//asbdasbabasafdyia -> safdyi
+
+function longestInStr(str) {
+    let arr = str.split("");
+    let longest = "";
+    arr.forEach((item, index) => {
+        let current = [];
+        let i = index;
+        while(!current.includes(arr[i])) {
+            current.push(arr[i]);
+            i++;
+        }
+        longest = (current.length > longest.length) ? current.join("") : longest;
+    })
+    //console.log(longest);
+    return longest;
+}
+
+//longestInStr('asbdasbabasafdyia')
