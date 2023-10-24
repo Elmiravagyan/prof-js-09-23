@@ -47,6 +47,15 @@ function duplicates(arr) {
     });
     return newArray;
 }
+
+//version 2
+let arr1 =[1, 2, 1, 4, 2];
+function removedub(data) {
+    return data.filter((item, index) => data.indexOf(item) === index)
+}
+undefined
+removedub(arr1)
+(3) [1, 2, 4]
 // We have users array
 let users = [
     {
@@ -157,15 +166,17 @@ users.forEach(item => {if (item["eyeColor"] == "blue" && item["gender"] == "male
 //version 2
 users.filter(user => user.gender === 'male' && user.eyeColor === 'blue')                +
 // Return the last user which is female and the balance is greater than 2800.
-users.forEach(item => {
-    let arrOfNum = item.balance.split('');
-    let number = arrOfNum.filter(char => {
-        return !isNaN(char)
-    })
-    number = number.join("")
+let filtered = users.filter(item => {
+  let arrOfNum = item.balance.split('');
+    //console.log(arr)
+  let number= arrOfNum.filter(char => {
+    return !isNaN(char)
+      
+  })
+  number = number.join('');
+    //console.log(number)
+ return  item.gender=== 'female' && number>2000 
 })
-users.findLastIndex(item => item.gender === 'female' && number>2800)
-
 
 //version 2
 function toNumber(string, sign) {
