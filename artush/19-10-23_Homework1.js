@@ -42,6 +42,8 @@ switch(figureName){
     default : "You entered incorrect name of figure , Try again !!!!"
 }
 
+// TODO Ճիշտ է
+
 
 /////////////////////////////////////////////////////////////////////////////////////
 //22222222222222222222222222222222222222222222222222222222222222222222222222222222222
@@ -58,6 +60,8 @@ do {
 } while (isSeven === false)
 
 console.log("YOU WON 1000$")
+
+// TODO Ճիշտ է բայց console.log- ը ճիշտ կլինի դնենք if բլոկի ներսում
 
 ////////////////////////////////////////////////////////////////////////////////////////
 //33333333333333333333333333333333333333333333333333333333333333333333333333333333333333
@@ -174,6 +178,8 @@ users.forEach((user) => {
 
 let filteredWithBalance = users.filter((user) => user.balance > 2000 && user.balance < 3000)
 
+// TODO Ճիշտ է:
+
 //3.2 Create a new array with given users and add a random color property to each user
 
 function GetRandomColor(){
@@ -187,11 +193,15 @@ let AddPropertyColor = users.map((user) => {
     return user
 })
 
+// TODO Ճիշտ է:
+
 //3.3 Calculate the entire balance of all users
 
 let totalBalanceOfAllUsers = 0 
 
 users.forEach((user) => totalBalanceOfAllUsers += user.balance)
+
+// TODO Ճիշտ է:
 
 //3.4 Add 1000$ to the balance of the user, whose name is Diann Tillman
 
@@ -200,9 +210,13 @@ let foundUser = users.find((user) => user.name === searchName)
 
 foundUser.balance += 1000
 
+// TODO Ճիշտ է:
+
 //3.5 Find a user whose name is Phyllis Morin   
 
 searchName = 'Phyllis Morin'
 foundUser = users.find((user) => user.name === 'Phyllis Morin')
 
 console.log(foundUser)
+
+// TODO Ճիշտ է:

@@ -13,6 +13,8 @@ function sevenOrNo() {
   }
 }
 
+// TODO Ճիշտ է
+
 // TASK 3
 let users = [
   {
@@ -106,12 +108,26 @@ let users = [
     name: "Wright Ashley",
   },
 ];
+
 // sub-task 1
 const filteredUsers = users.filter((user) => {
   const balanceString = user.balance.split("$")[1];
   const balance = balanceString.split(",").join("");
   return balance >= "2000" && balance <= "3000";
 });
+
+// TODO Սխալ է:
+/*
+Քանի որ string տիպով է պահված բալանսը filter ֆւնցիայի կատարած համեմատությունը սխալ կաշխատի
+իսկ ավելի ճիշտ ոչ թէ սխալ այլ ոչ էնպես ինչպես մենք ենք սպասում, խնդիրը նրանումա որ string-էրը այլ կերպ են համեմատվում
+ամեն սիմվոլ ունի իր համապատասխան կոդը օրինակ a-97, Z-90 ու երբ երկու սիմվոլ համեմատում ենք իրար հետ, տակից համեմատվում են
+իրենց ունեցած կոդերը  հետևաբար a > Z նույնն է թէ 97 > 90
+Ճիշտ ես արել որ $-ի նշանը ու ստորակետները հանել նոր համեմատել ես թվերը, բայց պետք էր նաև դարձնել number տիպի նոր համեմատել
+որ թվերը համեմատվեն որպես թվեր այսինքն համեմատությունը տեղի ունենար հանրահաշվի կոնտեքստում, իսկ երբ համեմատում ենք թվեր որոնք
+ստրինգեր են կարող ենք անսպասելի արդյունք ստանալ օրինակ  '3' > '1000' -> true
+Ստեղ հղղում եմ դնում կարաս կարդաս թէ ոնց են համեմատվում string տիպի արչեքները -> https://learn.javascript.ru/string  նախավերջին գլուխնա
+*/
+
 // sub-task 2
 const usersColorRandom = users.map((user) => {
   return {
@@ -119,6 +135,9 @@ const usersColorRandom = users.map((user) => {
     color: "#" + ((Math.random() * 0xffffff) | 0).toString(16),
   };
 });
+
+// TODO Ճիշտ է
+
 // sub-task 3
 let totalBalance = 0;
 for (let i = 0; i < users.length; i++) {
@@ -126,6 +145,9 @@ for (let i = 0; i < users.length; i++) {
   const totalSearch = Number(balanceString.slice(1, -1).split(",").join(""));
   totalBalance += totalSearch;
 }
+
+// TODO Ճիշտ է
+
 // sub-task 4
 // . . . can not do this, got a question to ask(!!!)
 // sub-task 5
@@ -135,6 +157,10 @@ if (userPhyllisMorin) {
 } else {
   console.log('User "Phyllis Morin" not found.');
 }
+
+// TODO Ճիշտ է
+
+
 // TASK 1
 function calcArea(shape) {
   switch (shape) {
@@ -156,6 +182,7 @@ function calcArea(shape) {
     case "c":
       const radius = parseFloat(prompt("Enter the radius of the circle:"));
     // can not do this, got a question to askx2 (!!!)
+          // TODO You may ask all your questions in the middle of your code and I will answer while checking your homework
     case "s":
       const sideLength = parseFloat(
         prompt("Enter the side length of the square:")
@@ -171,6 +198,9 @@ function calcArea(shape) {
       console.log("Invalid code. Please enter a valid code (t, z, c, s, r).");
   }
 }
+
+// TODO Ճիշտ է
+
 const shapeCode = prompt("Enter a code (t, z, c, s, r) to calculate the area:");
 calculateArea(shapeCode);
 // ADDITIONAL SUB-TASK 1

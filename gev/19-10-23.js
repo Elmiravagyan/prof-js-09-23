@@ -3,63 +3,67 @@
 // The program should ask the user to enter the code for which the user wants to find the area. 
 
 
-// let user = prompt(`'t' for triangle,
-// 'z' for trapezoid,
-// 'c' for circle, 
-// 's' for square, 
-// 'r' for rectangle`)
+let user = prompt(`'t' for triangle,
+'z' for trapezoid,
+'c' for circle, 
+'s' for square, 
+'r' for rectangle`)
 
 
-// function getArea(user = "") {
+function getArea(user = "") {
 
-//     let area = 0, base = 0, heigt = 0, bigBase = 0, radius = 0
+    let area = 0, base = 0, heigt = 0, bigBase = 0, radius = 0
 
-//     switch (user) {
-//         case 't':
-//             base = +prompt("Write a base of geometrical figure")
-//             heigt = +prompt("Write a heigth of geometrical figure")
-//             return area = 0.5 * base * heigt
-//         case 'z':
-//             base = +prompt("Write a base of geometrical figure")
-//             bigBase = +prompt("Write a big base of geometrical figure")
-//             heigt = +prompt("Write a heigth of geometrical figure")
-//             return area = (base + bigBase) / 2 * heigt
-//         case 'c':
-//             radius = +prompt("Write a radius of geometrical figure")
-//             return area = Math.PI * Math.pow(radius, 2)
-//         case 's':
-//             base = +prompt("Write a base of geometrical figure")
-//             return area = base * base
-//         case 'r':
-//             base = +prompt("Write a base of geometrical figure")
-//             bigBase = +prompt("Write a big base of geometrical figure")
-//             return area = base * bigBase
-//         default:
-//             return "Wrete corect data"
+    switch (user) {
+        case 't':
+            base = +prompt("Write a base of geometrical figure")
+            heigt = +prompt("Write a heigth of geometrical figure")
+            return area = 0.5 * base * heigt
+        case 'z':
+            base = +prompt("Write a base of geometrical figure")
+            bigBase = +prompt("Write a big base of geometrical figure")
+            heigt = +prompt("Write a heigth of geometrical figure")
+            return area = (base + bigBase) / 2 * heigt
+        case 'c':
+            radius = +prompt("Write a radius of geometrical figure")
+            return area = Math.PI * Math.pow(radius, 2)
+        case 's':
+            base = +prompt("Write a base of geometrical figure")
+            return area = base * base
+        case 'r':
+            base = +prompt("Write a base of geometrical figure")
+            bigBase = +prompt("Write a big base of geometrical figure")
+            return area = base * bigBase
+        default:
+            return "Wrete corect data"
 
-//     }
-// }
+    }
+}
 
-// alert(getArea(user))
+alert(getArea(user))
+
+// TODO Ճիստ է
 
 // 2.   Write a program that will ask a user for input, if the input is “7” alert
 // “YOU WON 1000$” If not ask the user the same question again.
 // This process should happen until the user finally enters “7”. 
 
-// let winNumber = prompt("Enter a number")
+let winNumber = prompt("Enter a number")
 
-// function getWinnerNumber(winNumber = "") {
-//     let result = "YOU WON 1000$"
+function getWinnerNumber(winNumber = "") {
+    let result = "YOU WON 1000$"
 
-//     while (winNumber != "7") {
-//         winNumber = prompt("Enter a number")
-//     }
-//     if (winNumber == "7") {
-//         return result
-//     }
-// }
+    while (winNumber != "7") {
+        winNumber = prompt("Enter a number")
+    }
+    if (winNumber == "7") {
+        return result
+    }
+}
 
-// alert(getWinnerNumber(winNumber))
+alert(getWinnerNumber(winNumber))
+
+// TODO Ճիշտ է բայց լավ պրակտիկա չի համարվում երբ ֆունկցիան ստացած արգումենտը փոփոխումա իր ներսում:
 
 // 3. We have a users list, write a program that
 //   3.1  Will filter users whose balance is between 2000-3000
@@ -171,6 +175,17 @@ function getUsers(users = []) {
 }
 console.log(getUsers(users))
 
+// TODO Սխալ է:
+/*
+Քանի որ string տիպով է պահված բալանսը filter ֆւնցիայի կատարած համեմատությունը սխալ կաշխատի
+իսկ ավելի ճիշտ ոչ թէ սխալ այլ ոչ էնպես ինչպես մենք ենք սպասում, խնդիրը նրանումա որ string-էրը այլ կերպ են համեմատվում
+օրինակ էս համեմատությունը վերադարձնում ա true '$0,92.55' > '$2,000.00' && '$0,192.55' < "$3,000.00"
+ամեն սիմվոլ ունի իր համապատասխան կոդը օրինակ a-97, Z-90 ու երբ երկու սիմվոլ համեմատում ենք իրար հետ, տակից համեմատվում են
+իրենց ունեցած կոդերը  հետևաբար a > Z նույնն է թէ 97 > 90
+Պետք էր $-ի նշանը ու ստորակետները հանել հետո դարձնել number նոր համեմատել թվերը
+Ստեղ հղղում եմ դնում կարաս կարդաս թէ ոնց են համեմատվում string տիպի արժեքները -> https://learn.javascript.ru/string  նախավերջին գլուխնա
+*/
+
 //  3.2
 function getRandomColors() {
     const colors = ['red', 'blue', 'pink', 'yellow', 'brown', 'purple', 'black', 'white', 'green', 'orange', 'gray']
@@ -179,7 +194,7 @@ function getRandomColors() {
 }
 
 function getNewProperty(users = []) {
-    let newArr = users.map(item => {
+    let newArr = users.map(item => { // /todo Կարող ես միանգամից վերադարձնել էս գործողության արդյունքը return users.map(ite....
         item["color"] = getRandomColors()
         return item
     })
@@ -187,6 +202,8 @@ function getNewProperty(users = []) {
 }
 
 console.log(getNewProperty(users))
+
+// TODO Ճիշտ է
 
 //  3.3
 function getBalanceOfAllUsers(users = []) {
@@ -233,6 +250,11 @@ function getBalanceOfAllUsers(users = []) {
 
 console.log(getBalanceOfAllUsers(users))
 
+// TODO Ճիշտ էս գրել բայց սա հեշտ խնդիրա շատ երկար ես գրել, ներքևում տես կարճ լուծումը
+const totalBalance = users.reduce((acc, { balance }) => {
+    return acc + Number(balance.replace('$', '').replaceAll(',', ''));
+}, 0)
+
 //  3.4
 function addBalance(users = [], sum = 0) {
     let numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
@@ -262,6 +284,13 @@ function addBalance(users = [], sum = 0) {
     return newArr
 }
 
+// TODO Ճիշտ է բայց էլի շատ երկար էս գրել, ստորակետները հանգիստ անտեսի թէ չէ որ ստորակետների հետևից ընկնենք
+//  պատկերացնում ես մեծ թվերի հետ աշխատելուց ինչքան պետքա տանջվենք էտ ընդամենը ֆորմատինգի համարա:
+
+const user1 = users.find(user => user.name === "Diann Tillman");
+const currentBalance = user1.balance.replace('$', '').replaceAll(',', '')
+user1.balance = `$${currentBalance + 1000}`
+
 console.log(addBalance(users, 1000))
 
 //  3.5
@@ -270,3 +299,5 @@ function findUser(users = [], str = "") {
     return users.find(user => user.name === str)
 }
 console.log(findUser(users, "Phyllis Morin"))
+
+// TODO Ճիշտ է

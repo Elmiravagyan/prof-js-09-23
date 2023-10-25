@@ -66,6 +66,8 @@ switch (figure) {
 }
 calculateArea()
 
+// TODO Ճիշտ է
+
 
 //----2----
 while (true) {
@@ -76,6 +78,8 @@ while (true) {
     }
 }
 
+
+// TODO Ճիշտ է
 
 //----3----
 let users = 
@@ -188,18 +192,22 @@ function  filtreBalance(array) {
   
 }
 
+// TODO Ճիշտ է
+
 //----3.2----
 
 function randomColor(arr){
   let colors =["Pink","Red","Blue","Orange","Green","Purple","brown", "yellow","beige"]
   
   let result=arr.map(item=>{
-      let index=Math.floor(Math.random()*colors.length-1);
+      let index=Math.floor(Math.random()*colors.length-1);// TODO -1 ը ավելորդ ա, հակառակ դեպքում "beige" գույնը չի օգտագործվի
       item.color=colors[index]
       return item
   })
   return result
 }
+
+// TODO Ճիշտ է
 
 //----3.3----
 
@@ -211,6 +219,7 @@ function summBalance(array) {
   return sum
 }
 
+// TODO Ճիշտ է
 //----3.4----
 function addBalance(array) {
   array.forEach(item=>{
@@ -220,5 +229,9 @@ function addBalance(array) {
   return array
 }
 
+// TODO Ճիշտ է, find մէթոը ավելի հարմար կլիներ օգտագործել
+
 //----3.5----
-let userPhyllisMorin=users.find(item=>item.name==="Phyllis Morin")
+let userPhyllisMorin=users.find(item=>item.name==="Phyllis Morin");
+
+// TODO Ճիշտ է,

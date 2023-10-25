@@ -1,6 +1,5 @@
 //homwork 1;
 let chosenFigures = prompt("Please choose a geometrical figure");
-
 function foo(userAnswer, a, b, h, r) {
   
   if (chosenFigures === "t") {
@@ -9,12 +8,14 @@ function foo(userAnswer, a, b, h, r) {
     return ((a + b) / 2) * h;
   } else if (chosenFigures === "c") {
     return 3.14 * Math.pow(r, 2);
-  } else if (chosenFigures === "s") {
+  } else if (chosenFigures === "s") { // TODO or just a**2
     return  a * b;
   } else if (chosenFigures === "r") {
     return a * b;
   }
 }
+
+// TODO Ճիշտ է
 
 console.log(foo(chosenFigures, 2, 4, 5, 3));
 
@@ -28,9 +29,13 @@ console.log(foo(chosenFigures, 2, 4, 5, 3));
    }
 }
 
+// TODO Ճիշտ է
+
 // homework 3;
 
-let users = [{
+let users =
+    [
+        {
     "_id": "6527b06f476f60fc89813fbb",
     "balance": "$2,928.37",
     "age": 19,
@@ -129,11 +134,15 @@ let filtered = users.filter(user => {
 });
 console.log(filtered);
 
+// TODO Ճիշտ է
+
 //added colors;
 for (let i = 0; i < users.length; i++) {
   users[i].color = Math.floor((Math.random() * 255));
 }
 console.log(users)
+
+// TODO Սխալ է random թվերի փոխարեն պետք էր random գույնէր ավելացնել
 
 let reducedUsersBalance = users.reduce((acc, currentUser) => {
   let balance = currentUser.balance.slice(1).split(",").join("");
@@ -144,6 +153,8 @@ let reducedUsersBalance = users.reduce((acc, currentUser) => {
 
 }, 0)
 console.log(reducedUsersBalance);
+
+// TODO Ճիշտ է
 
 let addedBalance = users.find(user => {
   let balance;
@@ -156,6 +167,8 @@ let addedBalance = users.find(user => {
     return user.balance = newBalance;
 })
  console.log(addedBalance);
+
+// TODO Ճիշտ է բայց find մեթոդը ինչ որ պայմանին համապատասխանող ելեմենտ գտնելու համարա, ճիշտ չի իր ներսում փոփոխության ենթարկել զանգվածը:
 
 let findUser = users.find(val => val.name === "Phyllis Morin");
 console.log(findUser);

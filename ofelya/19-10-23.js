@@ -17,7 +17,7 @@ function calc(a=1, b=1, c=1) {
   return function(figure) {
       switch(figure) {
          case 't': return 0.5*a*b;
-          case 'z': return 0.5(a+b)*c;
+          case 'z': return 0.5*(a+b)*c;
           case 'c': return 3.14 *(a*a);
           case 's': return a*a;
           case 'r': return a*b;
@@ -25,6 +25,10 @@ function calc(a=1, b=1, c=1) {
       }
   }
 };
+
+// TODO Ճիշտ է, բայց սխալ ա նույն անունով արգումենտը մեկից ավել մեծությունների համար օգտագործել շփոթեցնողա էդպես,
+//  նկատի ունեմ օրինակ որ a փոփոխականը համ շրջանագծի շառավիղն ա համ կառակուսու կողմը և այլն
+
 /*
 2. Write a program that will ask a user for input, if the input is “7” alert
 “YOU WON 1000$” If not ask the user the same question again.
@@ -39,7 +43,7 @@ while (true) {
 }
 };
 
-
+// TODO Ճիշտ է,
 
 /* 
 3. We have a users list, write a program that
@@ -162,6 +166,8 @@ let filtered = users.filter(item => {
  return  number>2000 && number<3000
 })
 
+// TODO Սխալ է, filtered զանգվածը դատարկա թվի ամողջի նշանը հեռացնում ես ֆունկցիայի մեջ դրանիցա:
+
 //3.2
 function randomcolor () {
     const colors = ["blue", "green", "yellow", "pink", "red", "black"]
@@ -171,6 +177,8 @@ function randomcolor () {
 users.forEach(item => {
     item.color = randomcolor()
 })
+
+// TODO Ճիշտ է,
 
 //3.3
 let sum = 0
@@ -183,6 +191,8 @@ users.forEach(item => {
     sum += +number
    
 })
+
+// TODO Սխալ է
 
 //3.4
 
@@ -199,6 +209,9 @@ users.forEach(item => {
     }
     })
 
+// TODO Սխալ է
 
 //3.5
 let user = users.find (item => item.name = "Phyllis Morin")
+
+// TODO Ճիշտ է,

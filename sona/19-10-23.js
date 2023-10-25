@@ -78,12 +78,16 @@ function areaR() {
     } else return alert(`The area of the given rectangle equals to ${result}.`);
 }
 
+// TODO ճիշտ է
+
 //task 2
 let number;
 do {
     number = +prompt("Input a number for a chance to win 1000$!");
 } while (number !== 7)
 alert("YOU WON 1000$");
+
+// TODO ճիշտ է բայց ավելի ճիտ կլինի alert-ը կանչենք ցիկլի մեջ
 
 //task 3
 let users = 
@@ -192,14 +196,28 @@ function balanceFilter(arr) {
         })
 }
 
+// TODO Սխալ է:
+/*
+Քանի որ string տիպով է պահված բալանսը filter ֆւնցիայի կատարած համեմատությունը սխալ կաշխատի
+իսկ ավելի ճիշտ ոչ թէ սխալ այլ ոչ էնպես ինչպես մենք ենք սպասում, խնդիրը նրանումա որ string-էրը այլ կերպ են համեմատվում
+ամեն սիմվոլ ունի իր համապատասխան կոդը օրինակ a-97, Z-90 ու երբ երկու սիմվոլ համեմատում ենք իրար հետ, տակից համեմատվում են
+իրենց ունեցած կոդերը  հետևաբար a > Z նույնն է թէ 97 > 90
+Ճիշտ ես արել որ $-ի նշանը ու ստորակետները հանել նոր համեմատել ես թվերը, բայց պետք էր նաև դարձնել number տիպի նոր համեմատել
+որ թվերը համեմատվեն որպես թվեր այսինքն համեմատությունը տեղի ունենար հանրահաշվի կոնտեքստում, իսկ երբ համեմատում ենք թվեր որոնք
+ստրինգեր են կարող ենք անսպասելի արդյունք ստանալ օրինակ  '3' > '1000' -> true
+Ստեղ հղղում եմ դնում կարաս կարդաս թէ ոնց են համեմատվում string տիպի արչեքները -> https://learn.javascript.ru/string  նախավերջին գլուխնա
+*/
+
 //3.2
 function randColor(arr) {
     let colors = ["beige", "blue", "red", "black", "white", "gray", "green", "brown", "purple", "yellow", "orange", "pink"];
     return arr.map((item)=>{
         item.color = colors[Math.floor(Math.random()*(colors.length - 1))];
+        //TODO   ստեղ կստանաս 0-ից 10 թվերը ու "pink" գույնը երբեք չի օգտագործվի
+        // պատքա հանենք վերջին  - 1-ը
         return item;
     })
-}
+} // TODO Ճիշտ է
 
 //3.3
 function calcBalance(arr) {
@@ -213,7 +231,7 @@ function calcBalance(arr) {
     result += +number;
   })
   return result;
-}
+} // TODO Ճիշտ է
 
 //3.4
 let theUser = users.find((item) => {
@@ -224,7 +242,7 @@ balanceArr = balanceArr.filter((item)=>{
   return item !== "$" && item !== ",";
 })
 balanceArr = balanceArr.join("");
-theUser["balance"] = `$${+balanceArr + 1000}`;
+theUser["balance"] = `$${+balanceArr + 1000}`; //TODO ճիշտ է
 
 //3.5
-let Phyllis = users.find(item => item["name"] === "Phyllis Morin");
+let Phyllis = users.find(item => item["name"] === "Phyllis Morin"); //TODO ճիշտ է

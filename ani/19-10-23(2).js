@@ -1,4 +1,4 @@
-// 1. Write a program to calculate the area of geometrical figures like circles, triangles, trapezoids, squares, and rectangles.he program should ask the user to enter the code for which the user wants to find the area. 
+// 1. Write a program to calculate the area of geometrical figures like circles, triangles, trapezoids, squares, and rectangles.he program should ask the user to enter the code for which the user wants to find the area.
 function areas() {
     let userPrompt = prompt('write the code of the geometrical figures');
     switch(userPrompt){
@@ -29,12 +29,17 @@ function areas() {
     }
 }
 
+
+// TODO Ճիշտ է
+
 // 2. Write a program that will ask a user for input, if the input is “7” alert “YOU WON 1000$” If not ask the user the same question again. This process should happen until the user finally enters “7”. 
 let userPrompt
 while (userPrompt !== '7') {
      userPrompt = prompt('write your lucky number')
  }
 alert('“YOU WON 1000$”')
+
+// TODO Ճիշտ է, բայց alert-ը ճիշտ կլինի դնենք ցիկլի ներսում
 
 
 
@@ -140,10 +145,12 @@ let filteredArray = [];
 let filtered = users.filter((user) => {
    let withoutDollar = user.balance.replace('$', '')
    let result = withoutDollar.replace(',', '')
-   if(result > 2000 && result < 3000){
+   if(result > 2000 && result < 3000){ // TODO -> return result > 2000 && result < 3000
        filteredArray.push(user)
    }
 })
+
+// TODO Ճիշտ է, filter մեթոդը հենց ֆիլտրած զանգված ստանալու համար, կարի չկա ավելորդ filteredArray փոփոխականի
 
 // 3.2 Create a new array with given users and add a random color property to each user
 
@@ -155,6 +162,8 @@ users.forEach((user) => {
   newUsersArray.push(newUser)
 })
 
+// TODO Ճիշտ է
+
 // 3.3 Calculate the entire balance of all users
 let sum = 0;
   users.forEach(element => {
@@ -164,11 +173,15 @@ let sum = 0;
      sum += +final
   });
 
+// TODO Սխալ է, ամբողջի նշանը (.) պետք չի հանել գումարելիս:
+
   // 3.4 Add 1000$ to the balance of the user, whose name is Diann Tillman
 
       
 
      // 3.5 Find a user whose name is Phyllis Morin
 
-        let foundedUser = users.find((user) => user.name === 'Phyllis Morin')
-          console.log(foundedUser)
+let foundedUser = users.find((user) => user.name === 'Phyllis Morin')
+  console.log(foundedUser)
+
+// TODO Ճիշտ է
