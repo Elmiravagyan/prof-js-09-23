@@ -13,39 +13,74 @@ function reverseNum(num) {
 
 //task 2
 /*
-let str = "star"
-function strCombs(str) {
-    let arr = str.split("");
-    let result = [];
-    //console.log(arr)
-    arr.forEach((item) => {
-        result.push(item);
-        for(let i = 0; i <= arr.length - 1; i++) {
-           if(item !== arr[i]) {
-            result.push(item + arr[i]);
-           }
-        }
-    })
-    console.log(result)
-}
+here's what i came up with after hours of struggling, 
+but it is complicated and the continuation i had in mind was even more complicated
+so i gave up, i will study the example chat GPT gave me, 
+my version was the following
 */
 
-//strCombs(str)
+/*
 
-//task3
-
-/*function includesStr(str, sub) {
-    let arrMain = str.split("");
-    let arrSub = sub.split("");
-    let semple = [];
-    arrSub.filter((item) => {
-        return item ===
-    })
-
+function strCombs(str) {
+    let eachRound = factorial(str.length) / str.length;
+    let realArr = str.split("");
+    let workingArr = realArr.slice();
+    let result = [];
+    let n = 1;
+    for(let i = eachRound; i > 0; i--) {
+        let currentDigit = workingArr.splice(1,1);
+        workingArr.splice(workingArr.at(-n),0,currentDigit);
+        let currentComb = workingArr.join("");
+        if(!result.includes(currentComb)) {
+            result.push(currentComb)
+        } else {
+            n++;
+            continue;
+        }
+    }
+    console.log(result)
 }
 
-['h', 'e', 'l', 'l', 'o']
-['e', 'l']*/
+
+function factorial(num) {
+    let result = 1;
+    for(let i = num; i > 1; i--) {
+        result *= i;
+    };
+    //console.log(result)
+    return result;
+}
+
+*/
+
+
+//task3 done
+
+function includesStr(str, sub) {
+    let arrMain = str.split("");
+    let arrSub = sub.split("");
+    while(true) {
+        let firstChar = arrMain.findIndex((item) => {
+            return item === arrSub[0];
+        });
+        //console.log(`firstChar ${firstChar}`);
+        if(firstChar === -1) {
+            return false;
+        };
+        let lastChar = firstChar + (sub.length-1);
+        let current = arrMain.slice(firstChar, (lastChar+1));
+        //console.log(current);
+        if(current.join("") === sub) {
+            return true;
+        } else {
+            arrMain.splice(firstChar,1);
+            continue;
+        }
+    }
+}
+
+//console.log(includesStr('Ananas', 'nas'))
+    
 
 //task 4 done
 function firstLetterUp(str) {
@@ -83,3 +118,43 @@ function sum(a, b) {
     }
    return sum; 
 }
+
+//extra 1 done
+function calc(a,b,sign) {
+    switch(sign) {
+        case "+":
+            return a + b;
+            break;
+        case "-":
+            return a - b;
+            break;
+        case "/":
+            return a / b;
+            break;
+        case "*":
+            return a * b;
+            break;    
+    }
+}
+
+//extra 2 done
+
+//asbdasbabasafdyia -> safdyi
+
+function longestInStr(str) {
+    let arr = str.split("");
+    let longest = "";
+    arr.forEach((item, index) => {
+        let current = [];
+        let i = index;
+        while(!current.includes(arr[i])) {
+            current.push(arr[i]);
+            i++;
+        }
+        longest = (current.length > longest.length) ? current.join("") : longest;
+    })
+    //console.log(longest);
+    return longest;
+}
+
+//longestInStr('asbdasbabasafdyia')
