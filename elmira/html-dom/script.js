@@ -38,3 +38,5 @@ styleButton.addEventListener('click', () => {
     array.map((item, index) => item.style.color = colors[index%3])
 
 })
+
+fetch

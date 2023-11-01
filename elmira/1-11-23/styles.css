@@ -1,0 +1,16 @@
+body {
+    background-color: aqua;
+}
+
+.happy {
+    margin: 4px;
+    background-color: chartreuse;
+}
+
+#main-button {
+    background-color: red;
+}
+
+.custom {
+    background-color: red;
+}
