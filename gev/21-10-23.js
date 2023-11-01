@@ -53,15 +53,20 @@ console.log(isIncludeSubstring("Hello", "ell"))
 // EX: ‘i love you’ => ‘I Love You’, (use str.split function)
 
 function upperCaseFirstLetter(sentence = "") {
-    let str = sentence.split("")
-    let newSentence = ""
 
-    for (let i = 0; i < str.length; i++) {
-        if (str[i] === str[0] || str[i - 1] === " ") {
-            newSentence += str[i].toUpperCase()
-        } else newSentence += str[i]
-    }
-    return newSentence
+    let words = sentence.split(" ")
+    let newWord = words.map(word => word.replace(word[0], word[0].toUpperCase()))
+    return newWord.join(" ")
+
+    // let str = sentence.split("")
+    // let newSentence = ""
+
+    // for (let i = 0; i < str.length; i++) {
+    //     if (str[i] === str[0] || str[i - 1] === " ") {
+    //         newSentence += str[i].toUpperCase()
+    //     } else newSentence += str[i]
+    // }
+    // return newSentence
 }
 
 console.log(upperCaseFirstLetter("i love you"))
@@ -71,6 +76,16 @@ console.log(upperCaseFirstLetter("i love you"))
 // Expected Output : 'Development'
 
 function getLongestWord(sentence = "") {
+
+    // let words = sentence.split(" ")
+    // let longestWord = words[0]
+    // words.forEach(word => {
+    //     if (word.length > longestWord.length) {
+    //         longestWord = word
+    //     }
+    // })
+    // return longestWord
+
     const unIncludesSign = [",", ".", ";", ":", "?", "!", " "]
     let longestWord = ""
     let currentWord = ""
