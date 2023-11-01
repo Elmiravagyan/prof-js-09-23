@@ -162,19 +162,20 @@ let users =
         }
     ]
 
-//  3.1
+//  3.1 Will filter users whose balance is between 2000-3000
+
+function getBalance(str = "") {
+    return +str.split("").filter(el => el < Infinity).slice(0, -2).join("")
+}
 function getUsers(users = []) {
-
-    let result = users.filter(item => item.balance > "$2,000.00" && item.balance < "$3,000.00")
-    return result
-
+    return users.filter(item => getBalance(item.balance) > 2000 && getBalance(item.balance) < 3000)
 }
 console.log(getUsers(users))
 
-//  3.2
+//  3.2 Create a new array with given users and add a random color property to each user
+
 function getRandomColors() {
     const colors = ['red', 'blue', 'pink', 'yellow', 'brown', 'purple', 'black', 'white', 'green', 'orange', 'gray']
-
     return colors[Math.floor(Math.random() * colors.length)]
 }
 
@@ -185,84 +186,103 @@ function getNewProperty(users = []) {
     })
     return newArr
 }
-
 console.log(getNewProperty(users))
 
-//  3.3
-function getBalanceOfAllUsers(users = []) {
-    let allBAlance = ""
-    let sumThousand = 0
-    let sumCent = 0
+//  3.3 Calculate the entire balance of all users
 
-    users.forEach(user => {
-        let numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-        let balance = user.balance
-        let current = ""
-        allBAlance = user.balance[0]
-
-        for (let i = 0; i < balance.length; i++) {
-            if (numbers.includes(balance[i])) {
-                current += balance[i]
-            } else if (balance[i] === ".") {
-                sumThousand += +current
-                current = ""
-            }
-        }
-        sumCent += +current
-    })
-
-    sumCent = sumCent.toString()
-
-    if (sumCent.length > 2) {
-        sumThousand += +sumCent.slice(0, sumCent.length - 2)
-        sumCent = sumCent.slice(sumCent.length - 2)
-    }
-
-    sumThousand = sumThousand.toString()
-
-    for (let j = 0; j < sumThousand.length; j++) {
-
-        if (sumThousand.length - j === 3) {
-            allBAlance += ","
-        }
-        allBAlance += sumThousand[j]
-    }
-
-    return allBAlance = allBAlance + '.' + sumCent
+function getBalanceWithCent(str = "") {
+    return +str.split("").filter(el => el !== "$" && el !== ",").join("")
 }
 
+function getBalanceOfAllUsers(users = []) {
+    return users.reduce((accumulator, currentValue) => accumulator + getBalanceWithCent(currentValue.balance), 0)
+}
 console.log(getBalanceOfAllUsers(users))
 
-//  3.4
+// function getBalanceOfAllUsers(users = []) {
+//     let allBAlance = ""
+//     let sumThousand = 0
+//     let sumCent = 0
+
+//     users.forEach(user => {
+//         let numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+//         let balance = user.balance
+//         let current = ""
+//         allBAlance = user.balance[0]
+
+//         for (let i = 0; i < balance.length; i++) {
+//             if (numbers.includes(balance[i])) {
+//                 current += balance[i]
+//             } else if (balance[i] === ".") {
+//                 sumThousand += +current
+//                 current = ""
+//             }
+//         }
+//         sumCent += +current
+//     })
+
+//     sumCent = sumCent.toString()
+
+//     if (sumCent.length > 2) {
+//         sumThousand += +sumCent.slice(0, sumCent.length - 2)
+//         sumCent = sumCent.slice(sumCent.length - 2)
+//     }
+
+//     sumThousand = sumThousand.toString()
+
+//     for (let j = 0; j < sumThousand.length; j++) {
+
+//         if (sumThousand.length - j === 3) {
+//             allBAlance += ","
+//         }
+//         allBAlance += sumThousand[j]
+//     }
+
+//     return allBAlance = allBAlance + '.' + sumCent
+// }
+
+// console.log(getBalanceOfAllUsers(users))
+
+//  3.4 Add 1000$ to the balance of the user, whose name is Diann Tillman
+
 function addBalance(users = [], sum = 0) {
-    let numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-    let newArr = users.map(user => {
+    users.forEach(user => {
         if (user.name === "Diann Tillman") {
-            let current = ""
-            let thousand = user.balance.slice(1, user.balance.length - 3)
-            for (let i = 0; i < thousand.length; i++) {
-                if (numbers.includes(thousand[i])) {
-                    current += thousand[i]
-                }
-            }
-            current = +current + sum
-            current = user.balance.slice(0, 1) + current + user.balance.slice(user.balance.length - 3, user.balance.length)
-            user.balance = ""
-
-            for (let j = 0; j < current.length; j++) {
-                if (current.length - j === 6) {
-                    user.balance += ","
-                }
-                user.balance += current[j]
-            }
+            user.balance = getBalanceWithCent(user.balance) + sum
         }
-        return user
-    }
-    )
-    return newArr
+    })
+    return users
 }
+console.log(addBalance(users))
+// function addBalance(users = [], sum = 0) {
+//     let numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+//     let newArr = users.map(user => {
+//         if (user.name === "Diann Tillman") {
+//             let current = ""
+//             let thousand = user.balance.slice(1, user.balance.length - 3)
+//             for (let i = 0; i < thousand.length; i++) {
+//                 if (numbers.includes(thousand[i])) {
+//                     current += thousand[i]
+//                 }
+//             }
+//             current = +current + sum
+//             current = user.balance.slice(0, 1) + current + user.balance.slice(user.balance.length - 3, user.balance.length)
+//             user.balance = ""
 
-console.log(addBalance(users, 1000))
+//             for (let j = 0; j < current.length; j++) {
+//                 if (current.length - j === 6) {
+//                     user.balance += ","
+//                 }
+//                 user.balance += current[j]
+//             }
+//         }
+//         return user
+//     }
+//     )
+//     return newArr
+// }
+
+// console.log(addBalance(users, 1000))
 
 //  3.5
 
