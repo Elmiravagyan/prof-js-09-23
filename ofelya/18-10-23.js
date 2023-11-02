@@ -22,16 +22,19 @@ NaN
 let newUsrs = usrs.map(item => Object.assign({}, item));
 
 // Write a function that will create constant objects.
-function consObj(obj) {
-    let newObj = {}
-    return Object.freeze(obj)
-    }
 
+    function constObj(obj) {
+      Object.freeze(obj)
+      return obj;
+  }
 // Write a function that generates users with name, surname, and age
-function people (users) {
-    function users(name, surname, age) {
-
-    }
+function gener(name, surname, age) {
+  let user = {
+      name: name,
+      surname: surname,
+      age: age,
+  }
+  return user;
 }
 
 // Write a function that will filter the array from duplicates
@@ -44,6 +47,15 @@ function duplicates(arr) {
     });
     return newArray;
 }
+
+//version 2
+let arr1 =[1, 2, 1, 4, 2];
+function removedub(data) {
+    return data.filter((item, index) => data.indexOf(item) === index)
+}
+undefined
+removedub(arr1)
+(3) [1, 2, 4]
 // We have users array
 let users = [
     {
@@ -154,15 +166,17 @@ users.forEach(item => {if (item["eyeColor"] == "blue" && item["gender"] == "male
 //version 2
 users.filter(user => user.gender === 'male' && user.eyeColor === 'blue')                +
 // Return the last user which is female and the balance is greater than 2800.
-users.forEach(item => {
-    let arrOfNum = item.balance.split('');
-    let number = arrOfNum.filter(char => {
-        return !isNaN(char)
-    })
-    number = number.join("")
+let filtered = users.filter(item => {
+  let arrOfNum = item.balance.split('');
+    //console.log(arr)
+  let number= arrOfNum.filter(char => {
+    return !isNaN(char)
+      
+  })
+  number = number.join('');
+    //console.log(number)
+ return  item.gender=== 'female' && number>2000 
 })
-users.findLastIndex(item => item.gender === 'female' && number>2800)
-
 
 //version 2
 function toNumber(string, sign) {
@@ -172,6 +186,19 @@ function toNumber(string, sign) {
    
 };
 users.findLast(item => item.gender === 'female' && toNumber(item.balance) > 2800)
+
+//version 2
+let filtered = users.findLast(item => {
+  let arrOfNum = item.balance.split('');
+    //console.log(arr)
+  let number= arrOfNum.filter(char => {
+    return !isNaN(char)
+      
+  })
+  number = number.join('');
+    //console.log(number)
+ return  (item.gender === 'female' && number > 2800)
+})
 
 // Insert a new user from users array doc (name user5 in the doc) at the 5th index.
 let user5 =   {
