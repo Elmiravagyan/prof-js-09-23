@@ -13,13 +13,16 @@ function reverseNum(num) {
 
 //task 2
 /*
-here's what i came up with after hours of struggling, 
-but it is complicated and the continuation i had in mind was even more complicated
-so i gave up, i will study the example chat GPT gave me, 
-my version was the following
+երկար չարչարվել եմ, բայց չկարողացա լուծել էս մեկը,
+ներքևում դրել եմ՝ թե ինչ էի փորձում անել, բայց եթե վերջնական աշխատող տրամաբանություն էլ գտնեի,
+շատ երկար ու խճճված էր լինելու, թողեցի կիսատ
+
+chatGPT-ն recursive ֆունկցիաներով լուծում առաջարկեց,
+էդքան էլ հասկանալի չէր իմ համար, բայց կուսումնասիրեմ
 */
 
 /*
+թե ինչ էի ես փորձել
 
 function strCombs(str) {
     let eachRound = factorial(str.length) / str.length;
