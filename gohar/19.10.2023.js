@@ -12,6 +12,7 @@ function reverseNum(num) {
 let reversed = reverseNum(number)
 console.log(reversed);
 }
+
 // exercise 1 , option 2;
 function reverseNum(num) {
   let str = "";
@@ -22,6 +23,8 @@ function reverseNum(num) {
 let reversed = reverseNum(number)
 console.log(reversed);
 
+// TODO reverseNum Ճիշտ է
+
 // ex. 3;
 let str = "Sunshine";
 
@@ -31,6 +34,8 @@ function findSubstring(str, el) {
 
 let res = findSubstring(str, "shi");
 console.log(res);
+
+// TODO findSubstring Ճիշտ է
 
 //ex. 4;
  let sent = "i am coming home";
@@ -46,6 +51,11 @@ console.log(res);
 };
 console.log(convert(sent));
 
+// TODO findSubstring Ճիշտ է, հնարաորինս կարճ փորձի գրես խնդիրները
+//  օրինակը ներքևում տես, օրինակ էս դեպքի համար map մեթոդը ավելի հարմար ա օգտագործելը
+let convert = (string) => { // TODO EXAMPLE
+    return string.split(' ').map(word => `${word[0].toUpperCase()}${word.slice(1)}`).join(' ')
+}
 
 //ex. 5;
 let sentence = "I would like to receive the invitetion";
@@ -63,6 +73,19 @@ function getLongestWord(sent) {
 let word = getLongestWord(sentence);
 console.log(word);
 
+// TODO Ճիշտ է, սրա կարճ գրված օրինակն էլ եմ դնում ներքևում,
+//  մեկ էլ փոփոխականների անուններին միքիչ ուշադրություն դարձրու էլի ավելի լավա գրես sentence,
+//  որ շատ երկարա լինում բառը նոր կրճատի,
+//  զանգվածի մեթոդները հետաքրքիր են ու շատ են օգնում խնդիրներ լուծելուց,
+//  ես ներքևում sort մեթոդն եմ օգտագործել որը սորտաորումա զանգվածը ըստ մեր տված callback ֆունկցիայի
+//  մեր տված callback -ը սորտաորումա երկարության նվազման կարգով ու
+//  քանի որ գիտենք որ մեր ամենաերկար ելեմենտը սկզբումա լինելու միանգամից վերադարձնում ենք
+//  սորտաորված զանգվածի [0] ինդեքսով էլեմենտը:
+
+function getLongestWord(sent) { // TODO EXAMPLE
+    return sent.split(' ').sort((word1, word2) => word1.length > word2.length ? -1 : 1)[0]
+}
+
 //ex. 6;
 function getSumOfNums(a, b){
   return a + b;
@@ -71,5 +94,5 @@ function getSumOfNums(a, b){
 let sum = getSumOfNums(42, 12);
 console.log(sum);
 
-
+// TODO Ճիշտ է,
 

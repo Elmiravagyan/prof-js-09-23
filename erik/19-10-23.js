@@ -229,30 +229,33 @@ console.log(name1) //TODO ճիշտ է
 // Write a JavaScript function that reverses a number
 
 
-// function reverseNum(number) {
-//   number = number + '';
-//   return number.split("").reverse().join("");
-// }
+function reverseNum(number) {
+  number = number + '';
+  return number.split("").reverse().join("");
+}
 
-// console.log(reverseNum(658))
+console.log(reverseNum(658))
 
-
+// TODO reverseNum ճիշտ է
 
 // Write a JavaScript function that generates all combinations of a string
 
 
 
-// function generatesStr(string) {
-//   let arr = [];
-//       for(let i = 0; i <= string.length; i++) {
-//         for(let j = i + 1; j <= string.length; j++) {
-//           arr.push(string.slice(i, j))
-//         }
-//       }
-//       return arr;
-// }
+function generatesStr(string) {
+  let arr = [];
+      for(let i = 0; i <= string.length; i++) {
+        for(let j = i + 1; j <= string.length; j++) {
+          arr.push(string.slice(i, j))
+        }
+      }
+      return arr;
+}
 
-// console.log(generatesStr("Erik"))
+console.log(generatesStr("Erik"))
+
+// TODO generatesStr Սխալ է, սխալ ես հասկացել պահանջը բոլոր կոմբինացիաներ ասելով նկատի ունենք
+//  string-ի անդամների  բոլոր հնարաոր դասաորությունները 'Erik'-ի համար օրինակ ['Erik', 'Erki', 'Eirk', 'Eikr', 'Ekri', 'Ekir', 'rEik', 'rEki', 'riEk', 'rikE', 'rkEi', 'rkiE', 'iErk', 'iEkr', 'irEk', 'irkE', 'ikEr', 'ikrE', 'kEri', 'kEir', 'krEi', 'kriE', 'kiEr', 'kirE']
 
 
 
@@ -261,24 +264,50 @@ console.log(name1) //TODO ճիշտ է
 // EX: str = “Kill” substr = “lolo” => returned value is false
 
 
-// function generatesStr(string, substr) {
-//   let arr = [];
-//       for(let i = 0; i <= string.length; i++) {
-//         for(let j = i + 1; j <= string.length; j++) {
-//           arr.push(string.slice(i, j))
-//         }
-//       }
-//       for(let i = 0; i <= arr.length; i++){
-//         if(arr[i] == substr){
-//           console.log(true)
-//           if(arr[i] !== substr){
-//             console.log(false)
-//           }
-//         }
-//       }
-// }
+function generatesStr(string, substr) {
+  let arr = [];
+      for(let i = 0; i <= string.length; i++) {
+        for(let j = i + 1; j <= string.length; j++) {
+          arr.push(string.slice(i, j))
+        }
+      }
+      for(let i = 0; i <= arr.length; i++){
+        if(arr[i] == substr){
+          console.log(true)
+          if(arr[i] !== substr){
+            console.log(false)
+          }
+        }
+      }
+}
 
-// generatesStr('Erik','rik')
+generatesStr('Erik','rik')
+
+// TODO generatesStr Մասամբ ճիշտ է, ֆունկցիան պետքա վերադարձնի true կամ false որ հասկանանք
+//  պարունակում ա string ը substr ին թէ ոչ console-ի փոխարեն վերադարձ արա ֆունկցիաից
+//  Բայց երեք հատ ցիկլը շատ շատա երկուսն էլ ա շատ ներքևում տես կարճ լուծման երու օրինակ
+
+function myIncludes(str, substr) { // TODO EXAMPLE
+    return str.includes(substr)
+}
+
+function myIncludes(str, subString) { // TODO ամ եթե ցիկլով եսպես
+    let matchPoint = '';
+    let compareIndex = 0;
+    for(let i = 0; i < str.length; ++i) {
+        if(subString[compareIndex] === str[i]) {
+            ++compareIndex
+            matchPoint += str[i];
+        } else if(matchPoint === subString) {
+            return true;
+        } else {
+            matchPoint = '';
+            compareIndex = 0;
+        }
+    }
+
+    return matchPoint === subString;
+}
 
 
 // Write a JavaScript function that accepts a string as a parameter and converts the first letter of each word of the string in the upper case.
@@ -286,22 +315,23 @@ console.log(name1) //TODO ճիշտ է
 
 
 
-// function upperCase(str) {
-//   let string = []
-//   string.push(str.split(' '))
-//   console.log(string)
-//   let upper = []
-//     for (let i = 0; i < string[0].length; i++) {
-//       string = (string[0][i].charAt().toUpperCase())
-//       console.log(string)
-//     }
-// }
+function upperCase(str) {
+  let string = [] // TODO միանգամից string-ին վերագրի = str.split(' ')
+  string.push(str.split(' ')) // TODO ավելորդա էս տողը
+  let upper = []
+    for (let i = 0; i < string[0].length; i++) {
+      string = (string[0][i].charAt().toUpperCase()) // TODO string ինչի համար ենք վերագրում սա (string[0][i].charAt().toUpperCase())
+    }
+} // TODO ստեղ էլ ֆունկցիատ ոչինչ չի վերադարձնում
 
-// upperCase('i love you')
+upperCase('i love you')
 
+// TODO upperCase Սխալ է, ["i",  "love", "you"] էսպիսի զանգվածա վերադարձնում ֆունկցիան,
+//  string բառը րեզերվ արած բառա իրան պետք չի օգտագործել որպես փոփոխականի անուն ներևում տես լուծման ճիշտ օրինակը
 
-
-
+let upperCase = (str) => { // TODO EXAMPLE
+    return str.split(' ').map(word => `${word[0].toUpperCase()}${word.slice(1)}`).join(' ')
+}
 
 
 
@@ -317,12 +347,12 @@ console.log(name1) //TODO ճիշտ է
 
 // Write a JS function, which returns the sum of two numbers
 
-// function myFn(a, b) {
-//   c = a + b;
-//   console.log(c)
-// }
+function myFn(a, b) {
+  c = a + b; // todo c-ն ճիշտ հայտարարի (let, const), բայց c-ի կարիքը չկա էլ
+  console.log(c) // return a + b;
+} // TODO ստեղ էլ ֆունկցիատ ոչինչ չի վերադարձնում
 
-// myFn(1, 2)
+myFn(1, 2)
 
 
 // Extra Exercise 1
@@ -334,25 +364,26 @@ console.log(name1) //TODO ճիշտ է
 // 	calc(1, 2, ‘*’) =>2
 // 	calc(1, 2, ‘/’) =>½
 
-// function calculator(first, second, operator) {
-//   let res = 0
-//   Number.first
-//   Number.second
+function calculator(first, second, operator) {
+  let res = 0 //todo  res -ը պետք չի ավելորդ փոփոխականա
+  Number.first // todo ??? էս ինչա նշանակում Number.first
+  Number.second //  todo ????
 
-//   switch (operator) {
-//       case "+":
-//           return res = first + second
-//       case "-":
-//           return res = first - second
-//       case "*":
-//           return res = first * second
-//       case "/":
-//           return res = first / second
-//   }
+  switch (operator) {
+      case "+":
+          return res = first + second // todo return first + second
+      case "-":
+          return res = first - second // todo return first - second
+      case "*":
+          return res = first * second // todo return first * second
+      case "/":
+          return res = first / second // todo return first / second
+  }
 
-// }
-// console.log(calculator(4, 5, "*"))
+}
+console.log(calculator(4, 5, "*"))
 
+// TODO Ճիշտ է
 
 
 

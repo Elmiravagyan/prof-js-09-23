@@ -204,13 +204,20 @@ function calcArea(shape) {
 const shapeCode = prompt("Enter a code (t, z, c, s, r) to calculate the area:");
 calculateArea(shapeCode);
 // ADDITIONAL SUB-TASK 1
+
+// TODO homework 14.10.2023
+
 function reverseNumber(num) {
   const numStr = num.toString();
   const reversedStr = numStr.split("").reverse().join("");
   const reversedNum = parseInt(reversedStr);
   return reversedNum;
 }
+
+// TODO reverseNumber Ճիշտ է
+
 // additional sub-task 2
+
 function getAllStrCombinations(input) {
   const result = [];
   function generateCombinations(currentCombination, str) {
@@ -228,12 +235,18 @@ function getAllStrCombinations(input) {
   generateCombinations("", input);
   return result;
 }
+
+// TODO getAllStrCombinations Ճիշտ է բայց ChatGpt պետք չի անել:
+
 // additional sub-task 3
 function includesSubstring(str, substr) {
   return str.includes(substr);
 }
+
+// TODO includesSubstring Ճիշտ է:
+
 // additional sub-task 4
-function findFirstLetterOfEachWord(inputString) {
+function findFirstLetterOfEachWord(inputString) { // TODO ֆունկցիայի անունը սխալ ա մի քիչ
   const words = inputString.split(" ");
   const foundWords = words.map((word) => {
     if (word.length > 0) {
@@ -245,6 +258,10 @@ function findFirstLetterOfEachWord(inputString) {
   const result = foundWords.join(" ");
   return result;
 }
+
+// TODO findFirstLetterOfEachWord Ճիշտ է:
+
+
 // additional sub-task 5
 function findLongestWord(inputString) {
   const words = inputString.split(" ");
@@ -259,10 +276,16 @@ function findLongestWord(inputString) {
 
   return theLongestWord;
 }
+
+// TODO findLongestWord Ճիշտ է:
+
 // additional sub-task 6
 function numSum(num1, num2) {
   return num1 + num2;
 }
+
+// TODO numSum Ճիշտ է:
+
 // EXTRA-EXERCISE 1
 function calc(num1, num2, operation) {
   switch (operation) {
@@ -281,6 +304,9 @@ function calc(num1, num2, operation) {
       return "Invalid operation";
   }
 }
+
+// TODO calc Ճիշտ է:
+
 // EXTRA-EXERCISE 2
 function findLongestWordWithDiffLett(inputString) {
   const words = inputString.split(" ");
@@ -302,3 +328,6 @@ function hasDiffLett(word) {
   }
   return true;
 }
+
+// TODO calc Սխալ է ու սինտաքս error ունես խնդրի մեջ փորձի բրաուզերի կոնսոլում աշխատացնես գրածտ ֆունկցիաները
+//  կամ հենց էտ ֆայլը run արա որ տենաս սխալներտ:

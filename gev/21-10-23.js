@@ -11,6 +11,8 @@ function reversNumber(number) {
 }
 console.log(reversNumber(123000001694))
 
+// TODO reversNumber Ճիշտ է
+
 // Write a JavaScript function that generates all combinations of a string
 
 function generatesStrings(str = "") {
@@ -28,6 +30,10 @@ function generatesStrings(str = "") {
     return genArr
 }
 console.log(generatesStrings("dog"))
+
+// TODO generatesStrings Սխալ է, սխալ ես հասկացել պահանջը բոլոր կոմբինացիաներ ասելով նկատի ունենք
+//  string-ի անդամների  բոլոր հնարաոր դասաորությունները 'dog'-ի համար օրինակ ['dog', 'dgo', 'odg', 'ogd', 'gdo', 'god']
+
 
 // Write a JavaScript function that checks if the given string includes the given substring.
 // EX: str = “Hello” substr = “ell” => returned value is true
@@ -49,6 +55,8 @@ function isIncludeSubstring(string = "", substring = "") {
 
 console.log(isIncludeSubstring("Hello", "ell"))
 
+// TODO isIncludeSubstring Ճիշտ է
+
 // Write a JavaScript function that accepts a string as a parameter and converts the first letter of each word of the string in the upper case.
 // EX: ‘i love you’ => ‘I Love You’, (use str.split function)
 
@@ -64,7 +72,9 @@ function upperCaseFirstLetter(sentence = "") {
     return newSentence
 }
 
-console.log(upperCaseFirstLetter("i love you"))
+console.log(upperCaseFirstLetter("i love you"));
+
+// TODO upperCaseFirstLetter Ճիշտ է
 
 // Write a JavaScript function that accepts a string as a parameter and find the longest word within the string.
 // Example string : 'Web Development Tutorial'
@@ -89,12 +99,26 @@ function getLongestWord(sentence = "") {
 
 console.log(getLongestWord("A; revolution.  .a revolution. not worth having"))
 
+// TODO getLongestWord Ճիշտ է, բայց չհասկացա ինչի էս բարդացրել նկատի ունեմ էս սա [",", ".", ";", ":", "?", "!", " "]
+//  մեզ հետաքրքիր են մենակ բացատները, ներքևում տես լուծման կարճ օրինակ
+//  զանգվածի մեթոդները հետաքրքիր են ու շատ են օգնում խնդիրներ լուծելուց,
+//  ես ներքևում sort մեթոդն եմ օգտագործել որը սորտաորումա զանգվածը ըստ մեր տված callback ֆունկցիայի
+//  մեր տված callback -ը սորտաորումա երկարության նվազման կարգով ու
+//  քանի որ գիտենք որ մեր ամենաերկար ելեմենտը սկզբումա լինելու միանգամից վերադարձնում ենք
+//  սորտաորված զանգվածի [0] ինդեքսով էլեմենտը:
+
+function getLongestWord(sentence) { // TODO EXAMPLE
+    return sentence.split(' ').sort((word1, word2) => word1.length > word2.length ? -1 : 1)[0]
+}
+
 // Write a JS function, which returns the sum of two numbers
 
 function sum(num1, num2) {
     return num1 + num2
 }
 console.log(sum(1, 2))
+
+// TODO sum Ճիշտ է,
 
 // Extra Exercise 1
 
@@ -107,21 +131,23 @@ console.log(sum(1, 2))
 // 	calc(1, 2, ‘/’) =>½
 
 function calc(first = 0, second = 0, sign) {
-    let result = 0
+    let result = 0 // todo result փոփոխաան պահելու կարիք չկա
 
     switch (sign) {
         case "+":
-            return result = first + second
+            return result = first + second // return first + second
         case "-":
-            return result = first - second
+            return result = first - second // return first - second
         case "*":
-            return result = first * second
+            return result = first * second // return first * second
         case "/":
-            return result = first / second
+            return result = first / second // return first / second
     }
 
 }
 console.log(calc(1, 8, "/"))
+
+// TODO calc Ճիշտ է,
 
 // Extra Exercise 2
 
@@ -148,3 +174,5 @@ function longestWordDiffLetters(str = "") {
 }
 
 console.log(longestWordDiffLetters("asbdasbabasafdyia"))
+
+// TODO longestWordDiffLetters Ճիշտ է,

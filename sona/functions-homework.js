@@ -11,6 +11,8 @@ function reverseNum(num) {
 
 // reverseNum(num)
 
+// TODO task 1) Ճիշտ է
+
 //task 2
 /*
 երկար չարչարվել եմ, բայց չկարողացա լուծել էս մեկը,
@@ -83,6 +85,8 @@ function includesStr(str, sub) {
 }
 
 //console.log(includesStr('Ananas', 'nas'))
+
+// TODO task3 Ճիշտ է
     
 
 //task 4 done
@@ -97,6 +101,8 @@ function firstLetterUp(str) {
 }
 
 //firstLetterUp('luke skywalker')
+
+// TODO task4 Ճիշտ է
 
 //task 5 done
 function longestWordStr (str) {
@@ -113,6 +119,8 @@ function longestWordStr (str) {
 
 //longestWordStr('Web Developement Tutorial')
 
+// TODO task5 Ճիշտ է
+
 //task 6 done
 function sum(a, b) {
     let sum = +a + +b;
@@ -121,6 +129,8 @@ function sum(a, b) {
     }
    return sum; 
 }
+
+// TODO task6 Ճիշտ է
 
 //extra 1 done
 function calc(a,b,sign) {
@@ -140,9 +150,11 @@ function calc(a,b,sign) {
     }
 }
 
+// TODO extra 1 Ճիշտ է
+
 //extra 2 done
 
-//asbdasbabasafdyia -> safdyi
+//asbdasbabasafdyia -> safdyi  TODO բա b-ն
 
 function longestInStr(str) {
     let arr = str.split("");
@@ -160,4 +172,26 @@ function longestInStr(str) {
     return longest;
 }
 
-//longestInStr('asbdasbabasafdyia')
+// longestInStr('asbdasbabasafdyia')
+
+// TODO extra 2 Ճիշտ է
+
+function longestInStr(str) {
+    let arr = str.split("");
+    return arr.reduce((uniqueItems, item, index) => uniqueItems.includes(item) ? uniqueItems : uniqueItems + item, '');
+}
+
+
+
+function getCombinationsForOne(index, character, str) {
+    const elements = str.split('').splice(index, 1);
+    return elements.map((char, index) => elements.splice(0,index, character).join(''));
+}
+function getAllCombinations(str) {
+    const combinations = [];
+    for(let i = 0; i < str.length; ++i) {
+        combinations.push(...getCombinationsForOne(i, str[i], str));
+    }
+
+    return combinations;
+}
