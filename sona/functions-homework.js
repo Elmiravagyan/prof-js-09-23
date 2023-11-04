@@ -180,18 +180,3 @@ function longestInStr(str) {
     let arr = str.split("");
     return arr.reduce((uniqueItems, item, index) => uniqueItems.includes(item) ? uniqueItems : uniqueItems + item, '');
 }
-
-
-
-function getCombinationsForOne(index, character, str) {
-    const elements = str.split('').splice(index, 1);
-    return elements.map((char, index) => elements.splice(0,index, character).join(''));
-}
-function getAllCombinations(str) {
-    const combinations = [];
-    for(let i = 0; i < str.length; ++i) {
-        combinations.push(...getCombinationsForOne(i, str[i], str));
-    }
-
-    return combinations;
-}
