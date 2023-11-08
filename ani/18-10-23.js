@@ -166,7 +166,7 @@ function toNumber(string, sign) {
 
 // 6.e 
 function findByCategory(array, category, value){
-    let exarray = [];
+  let exarray = [];
     function findByCategory(array, field, value){
         array.forEach(element => {
             if(element[field] === value){
