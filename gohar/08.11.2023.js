@@ -100,11 +100,12 @@
   User.prototype.fullInfo = function(){
        return `${this.name} ${this.age}`
   }
-   User.prototype.getPassword = null;
-  const user2 = new User('Ann', 32, "151446")
-  //password functionic chstacvec azatvem
+   delete User.prototype.getPassword;
   
-  console.log(user1.getPassword()) 
+   const user2 = new User('Ann', 32, "151446");
+  
+  
+  
   
   //ex.4 create a constructor for this type of objects                                   
   {
