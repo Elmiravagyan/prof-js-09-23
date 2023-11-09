@@ -69,7 +69,7 @@ function User(name, birthdate, profession){
     get getName(){
         return this.name;
     }
-     set getName(value){
+    set getName(value){
       return this.name = value;
 
     }
