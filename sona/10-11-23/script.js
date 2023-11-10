@@ -33,20 +33,11 @@ doublebtn.addEventListener("dblclick", () => {
 let text = document.getElementById("content");
 let changebtn = document.getElementById("changeText");
 
-let emoji = document.createElement("span");
-emoji.textContent = "😊";
 changebtn.addEventListener("click", () => {
     let children = [...text.children];
-    console.log(children);
-    children.forEach((item, index) => {
+    children.forEach((item) => {
         if(item.localName === "p") {
-           text.replaceChild(, emoji)
-            // text.removeChild(item);
-            // text.appendChild(emoji);
-        }
+            item.replaceWith("😊")
+        };
     });
-    console.log([...text.children])
-    // let paragraphs = children.filter(item => item.localName === "p");
-    // console.log(paragraphs);
-    // paragraphs.forEach(para => )
 })
