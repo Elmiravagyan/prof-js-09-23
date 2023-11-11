@@ -3,7 +3,7 @@
 function Circle (radius) {
     this.radius = radius;
     this.area = () => this.radius * this.radius * Math.PI ;
-    this.circumference = () => 2 * this.radius * Math.;
+    this.circumference = () => 2 * this.radius * Math.PI;
 }
 
 let circle1 = new Circle(5);
