@@ -22,6 +22,7 @@ doubleButton.addEventListener('dblclick', () => {
     }
     doubleButton.classList.toggle("clickDoubleButtonchange")
 })
+
 const content = document.querySelectorAll("p")
 swichButton.addEventListener('click', () => {
     content.forEach(item => item.innerText = "😊")
