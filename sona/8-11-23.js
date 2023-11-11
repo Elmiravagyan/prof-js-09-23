@@ -11,7 +11,7 @@ function Circle(radius) {
     } else {
         return new Circle(radius);
     }
-   
+
 }
 
 let c1 = new Circle(5);
@@ -21,6 +21,8 @@ let c1C = c1.circumference();
 let c2 = new Circle(7);
 let c2A = c2.area();
 let c2C = c2.circumference();
+
+// TODO Ճիշտ է
 
 //ex 2 done
 function Quadrilateral(a, b, c, d, angle1, angle2, angle3, angle4, diagonal1, diagonal2, height, base) {
@@ -90,6 +92,8 @@ let figure1 = new Quadrilateral(4,4,5,5,90,90,90,90)
 // console.log(figure1.perimeter())
 // console.log(figure1.type())
 
+// TODO Ճիշտ է ապրես
+
 function Rectangle(a,b,c,d) {
   if(new.target) {
     this.a = a;
@@ -119,6 +123,32 @@ function Rhombus(a, diagonal1, diagonal2, angle1, angle2, angle3, angle4) {
 Rectangle.prototype.__proto__ = Quadrilateral;
 Rhombus.prototype.__proto__ = Quadrilateral;
 
+// TODO Սոնա ջան էս ժառանգելու մասը սխալ էս արել, proto ի ու prototype -ի տարբերությունը սկզբում մի փոքր բարդա
+//  բայց հետո հասկանալի ա դառնում, prototype ունեն մենակ constructor ֆունկցիաները ու class-ները իսկ proto ունեն բոլոր օբյեկտները,
+//  ու ցանկացած proto միշտ հղղվումա ինչ որ prototype-ի, օրինակով նայենք որ պարզ լինի ունենք Array class ը կամ constructor-ը
+//  դեռ որ կարաս չմտածես դրանց տարբերությունների մասին
+//  constructor-ների ու class-ների նպատակնա վերադարձնել ինչ որ կոնկրետ տեսքի օբյեկտ կամ զանգված կամ մեկ այլ տվյալի կառուցվածք
+//  ու նաև տրամադրել մեթոդներ(ֆունկցիաներ) էտ տվյալի կառուցվածքի հետ աշխատելու համար, այ էտ բոլոր մեթոդները գտնվում են ամեն constructor-ի
+//  կամ class-ի prototype-ում որը իրենից սովորական օբյեկտա ներկայացնում իսկ իր բոլոր ժառանգներին փոխանցում ա __proto__ անունով բանալի
+//  որը հղղումա դեպի ծնողի prototype-ը
+const arr = new Array(1,2,3);
+// TODO այ հիմա զանգվածի մեր իմացած բոլոր մեթոդները find, filter, map և այլն գտնվում են Array.prototype-ի վրա ու եթե նայենք անմիջապես
+//  մեր arr-ին իրա վրա չկա նման ոչ մի մեթհոդ ստեղ արաջանումա հարց բա ոնց ենք կանչում arr.map() ու error չենք ստանում? ստեղ օգնության ա գալիս
+//  arr.__proto__ ն որը ինչպես ասեցինք ընդամենը հղղումա դեպի նույն Array.prototype-ը հիմա եթե համեմատենք arr.__proto__ === Array.prototype կստանանք true,
+//  այսինն ստացվումա որ դրանք երկուսն էլ հղղում են դեպի հիշողության նույն հասցե իսկ լեզվի մեջ ներդրվածա հետևյալ մեխանիզմ երբ փորձում ենք ինչոր
+//  բանալի կարդալ օբյեկտի վրայից օրինակ arr.hasOwnProperty սկզբում էտ բանալին փնտրվումա հենց մեր օբյեկտի մեջ եթե նման բանալի առկայա արժեքը վերադարձվումա
+//  եթե ոչ հաջորդը ստուգվումա arr.__proto__ -ն ու նույն տրամաբանությամբ մինչև վերջին prototype-ը որը որպես կանոն Object.prototype-նա լինում:
+// arr.hasOwnProperty X ->
+// arr.__proto_(Array.prototype) X ->
+// Array.prototype.__proto__(Object.prototype) X -> todo այ էս վերջին քայլում նոր գտնում ենք hasOwnProperty բանալին Object.prototype-ի վրայից:
+// todo: փորձի համար կարանք սենց մի բան անենք
+Array.prototype.__proto__ = null
+// todo: ու հիմա քանի որ կտրեցինք կապը Array.prototype.__proto__ -ից դեպի Object.prototype էլ arr.hasOwnProperty մեթոդին չի ստացվի հասսանելիություն ապահովվել
+//  հիմա երբ որ խոսում ենք ժառանգականությունից խոսքը գնումա հենց էտ prototype-ի մասին այսինքն մեր Rectangle ու Rhombus constructor -ների
+//  ժառանգների __proto__ բանալին պետքա հղղվի նույն օբւեկտին որը Quadrilateral.prototype -ա այսինքն պետքա սենց անենք
+Rectangle.prototype = Quadrilateral.prototype;
+Rhombus.prototype = Quadrilateral.prototype;
+
 //ex3 done
 function User(dob, name, profession) {
    if(new.target) {
@@ -134,6 +164,8 @@ function User(dob, name, profession) {
     return new User(dob, name, prof);
    }
 }
+
+// TODO Ճիշտ է
 
 //3.2 done?
 let user1 = new User("1.11.2000", "Ani", "barista");
@@ -152,6 +184,8 @@ user0.__proto__.getProf = function() {
     return this.profession;
 }
 
+// TODO Ճիշտ է
+
 //3.4 
 /* եթե constructor-ը ստեղծելուց հետո ենք ավելացրել<<վատ>> մեթոդը,
 օրինակ՝ նախորդ թասկի լուծման պես՝ user0.__proto__.getPassword = null կամ 
@@ -160,6 +194,8 @@ user0.__proto__.getPassword = function() {return "Confidential information"};
 եթե հենց User-ի մեջ ա գրված, երևի պահել բոլոր արդեն ստեղծված օբյեկտները,
  վերասահմանել User-ը ու նորից վերահայտարարել բոլոր օբյեկտները
 */
+
+// TODO Ճիշտ է
 
 //ex4 done
 function Car(brand, speed) {
@@ -174,7 +210,9 @@ function Car(brand, speed) {
     this.status = () => {
         return this.brand + " running at " + this.speed + " km/h";
     };
-}  
+}
+
+// TODO Ճիշտ է
 
 //ex5
 /*
@@ -183,3 +221,7 @@ function Car(brand, speed) {
 
 Չգիտեմ, էլ ինչ ասեմ :D բայց ձեռքի հետ հասկացա, որ getter/setter-ների հետ պրակտիկաս շատ քիչ ա, պետք ա պարապել :)
 */
+
+// TODO Ճիշտ է, հիմնական միտքը նայա որ եթե ինչ որ արժեք ունենք օբյեկտի մեջ որը չենք ուզում որ մեր օբյեկտի հետ աշխատողը
+//  փոխի կամ կարդա գրում ենք getter/setter getter-ով օրինակ կարող ենք իրական արժեքի ինչ որ մի մասը ցույց տալ ոչ ամբողջովին
+//  setter-ով էլ փոխել արժեքը մեր ուզած ձևով
