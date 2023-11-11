@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Josefin+Sans:wght@100;500&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Todo list</title>
+</head>
+<body>
+<div>
+    <input type="text" id="input"/>
+    <button id="add-todo">Add</button>
+    <div id="todo-container">
+        <div class="todo">
+            <div id="todo-text" class="edit-mode">
+                <input type="text">
+                <button class="btn">V</button>
+                <button class="btn">X</button>
+            </div>
+            <div>
+<!--                <button id="edit" class="btn">-->
+<!--                    <i class="fa fa-pencil" aria-hidden="true"></i>-->
+<!--                </button>-->
+                <button class="btn" id="delete">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
