@@ -1,6 +1,7 @@
 const clickButton = document.getElementById('clickButton')
 const doubleButton = document.getElementById('doubleClickButton')
 let btnText = true
+
 clickButton.addEventListener('click', () => {
     if (btnText) {
         clickButton.innerText = "Clicked!"
