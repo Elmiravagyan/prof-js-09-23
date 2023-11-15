@@ -1,0 +1,70 @@
+
+.clickButton {
+    width: 100px;
+    height: 30px;
+    background-color: yellow;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.clickButtonchange {
+    width: 100px;
+    height: 30px;
+    background-color: rgb(34, 224, 34);
+    color: rgb(183, 17, 17);
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.doubleClickButton {
+    width: 300px;
+    height: 30px;
+    background-color: palegreen;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.clickDoubleButtonchange {
+    width: 300px;
+    height: 30px;
+    background-color: purple;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    user-select: none;
+}
+
+#content{
+    margin: 15px;
+}
+
+.swichButton{
+    width: 250px;
+    height: 30px;
+    background-color: palegreen;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    user-select: none;
+}

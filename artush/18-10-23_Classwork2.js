@@ -96,16 +96,16 @@
 // function filterArrayFromDuplicates(array = []){
 //   array.forEach((item) => {
 //     if(array.findIndex((elem) => elem === item) !== array.findLastIndex((elem) => elem === item)){
-//       array.splice(array.findIndex((elem) => elem === item) , 1)
+//       array.splice(array.findLastIndex((elem) => elem === item) , 1)
 //     }
 //   })
 
 //   return array
 // }
 
-// filterArrayFromDuplicates(numbersWithDuplicates)
+// let result = filterArrayFromDuplicates(numbersWithDuplicates)
 
-// console.log(numbersWithDuplicates)
+// console.log(result)
 
 //6. We have users array
 
@@ -289,9 +289,8 @@ let users = [
 
 //////////// a is not defined 
 
-//7.2 
-
-// let a = 1
+//7.2 ///////// 1 
+1
 
 // function a() {
 //   console.log(a)
@@ -319,6 +318,15 @@ let users = [
 //   console.log(a);
 // }
 
+<<<<<<< HEAD
+// a()
+=======
 // a()
 
-///////// 1 
+///////// 1   
+/
+
+
+
+
+>>>>>>> 2931a8357d0f60c5d2dc6d311e3b4f8002bdcb20
