@@ -1,0 +1,23 @@
+body {
+    /*background-color: darkcyan;*/
+}
+
+h1 {
+    color: #ffda21;
+}
+
+.red {
+   width: 100px;
+   background-color: antiquewhite;
+   color: red;
+}
+
+.happy {
+    width: 100px;
+    background-color: darkorchid;
+    border-radius: 4px;
+}
+
+#dark {
+    /*color: aqua;*/
+}
