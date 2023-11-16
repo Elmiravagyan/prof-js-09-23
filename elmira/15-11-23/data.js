@@ -10202,3 +10202,16 @@ let data = {
     ]
 ]
 }
+
+function newData(data){
+     let keys = data.schema.map(item => item.columnName);
+     return data.data.map(arr =>{
+         return arr.reduce((obj, value, index)=>{
+                  obj[keys[index]] = value;
+                  return obj;
+         }, {})
+     })
+}
+
+let res = newData(data)
+console.log(res)
