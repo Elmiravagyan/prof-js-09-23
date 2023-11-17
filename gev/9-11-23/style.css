@@ -1,0 +1,78 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+section{
+    width: 400px;
+    height: 700px;
+    /* background-color: yellow; */
+}
+
+.input{
+    width: 70%;
+    height: 35px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 22px;
+}
+.addBtn{
+    width: 25%;
+    height: 35px;
+    border-radius: 10px;
+    font-size: 22px;
+    cursor: pointer;
+    color: blue;
+    user-select: none;
+    border: none;
+}
+.item{
+    width: 100%;
+    height: 30px;
+    margin-top: 4px;
+    font-size: 20px;
+    color: azure;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.doneitem{
+    text-decoration: line-through;
+}
+.teskText{
+    width: 60%;
+    height: 30px;
+    background-color: rgb(42, 42, 221);
+    border-radius: 5px;
+}
+.deleteBtn{
+    width: 15%;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: red;
+    user-select: none;
+    border: none;
+}
+.editBtn{
+    width: 15%;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: rgba(64, 64, 7, 0.619);
+    user-select: none;
+    border: none;
+}
+
+.editInput{
+    width: 60%;
+    height: 30px;
+    background-color: yellow;
+    border-radius: 5px;
+}
+
+.editText{
+    display: none;
+}
