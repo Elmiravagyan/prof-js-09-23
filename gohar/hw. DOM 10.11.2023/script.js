@@ -25,5 +25,9 @@ let doubleButton = document.getElementById("doubleClickButton");
 
  let div = document.getElementById("content");
  let tags = document.getElementsByTagName("p")
-   div.innerHTML = ":)";
-   
+   // div.innerHTML = ":)";
+
+ // TODO Գոհար ջան ճիշտ էր բոլորը մենակ էս վերջինը պետք էր ոչ թէ ամբողջը դարձնել սմայլիկ այլ մենակ p թեգերը  ներքևում դրել եմ ոնց պետքա անել:
+
+const children = [...div.children]
+children.forEach(p => p.innerHTML = '&#128522;')

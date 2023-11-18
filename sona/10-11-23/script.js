@@ -37,7 +37,10 @@ changebtn.addEventListener("click", () => {
     let children = [...text.children];
     children.forEach((item) => {
         if(item.localName === "p") {
-            item.replaceWith("😊")
+            // item.replaceWith("😊")
+            item.innerHTML = '&#128522;';
         };
     });
 })
+
+// TODO Սոնա ջան ճիշտ էր բոլորը ապրես, մենակ էտ սմայլիկ ավելացնելու մասը փոխել եմ պետքա իրա յունիկոդը ավելացնենք որ հենց սմայլիկ ավելանա,
