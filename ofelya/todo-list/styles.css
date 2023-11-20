@@ -1,0 +1,54 @@
+body {
+    font-family: 'Comfortaa', sans-serif;
+}
+
+.todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(255,205,237, 100);
+    width: 195px;
+    border-radius: 4px;
+    font-size: 12px;
+    padding: 4px;
+    margin: 4px;
+    background-color:deeppink;
+}
+
+.btn {
+    border: none;
+    border-radius: 4px;
+    background: rgba(255,205,237, 80);
+    margin: 1px;
+    color:darksalmon
+}
+
+.done {
+    text-decoration: line-through;
+    color: red;
+}
+
+.edit-mode {
+    display: flex;
+}
+
+.edit-mode input {
+    width: 120px;
+}
+h1 {
+    color:deeppink;
+    margin-top: 89px;
+    text-align: center;
+    background-color: aqua;
+    border-radius: 60px;
+}
+h2 {
+    color: darkviolet;
+    text-align: center;
+    background-color: aqua;
+    border-radius: 80px;
+}
+body {
+    background-color: lightpink;
+}
+
