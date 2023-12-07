@@ -1,0 +1,49 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.elevator {
+    display: flex;
+    align-items: center;
+}
+
+.floors {
+    display: flex;
+    flex-direction: column;
+}
+
+.floor {
+    height: 300px; /* Adjust floor height as needed */
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.lift {
+    width: 200px;
+    height: 300px;
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    line-height: 300px;
+    position: relative;
+    margin-right: 10px;
+    transition: 0.5s;
+}
+
+.floor-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.move-up,
+.move-down {
+    margin: 5px;
+    cursor: pointer;
+}
