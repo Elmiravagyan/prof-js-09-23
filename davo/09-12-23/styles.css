@@ -1,0 +1,21 @@
+.post{
+    margin: 5px;
+    border: thin solid;
+    border-radius: 5px;
+    /* font-weight: bolder; */
+    width: 500px;
+}
+#input{
+    margin: 15px;
+}
+.title {
+    font-weight: bold;
+    margin: 2px 2px 2px 2px; 
+}
+
+.body {
+    margin: 2px 2px 2px 2px;
+}
+.hide{
+    display: none;
+}
