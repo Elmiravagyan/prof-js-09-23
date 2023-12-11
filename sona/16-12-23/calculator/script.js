@@ -5,6 +5,7 @@ let result = document.getElementById('result');
 let actions = document.getElementById('actions');
 
 let reset = document.getElementById('reset');
+let equals = document.getElementById('equals');
 
 let add = document.getElementById('add');
 let subtract = document.getElementById('subtract');
@@ -25,7 +26,6 @@ actions.addEventListener('click', (event) => {
         switch(event.target.id) {
             case 'add':
             sign = '+';
-            console.log('sign in calc',sign)
             break;
             case 'subtract':
             sign = '-';
@@ -36,37 +36,31 @@ actions.addEventListener('click', (event) => {
             case 'divide':
             sign = '/';
             break;    
-        }
-    }
+        };
+    };
 })
 
 input.addEventListener('change', () => {
-    if(result.innerText && sign) {
-        result.innerText = calc(+result.innerText, sign, +input.value);
-        input.value = '';
-    } else {
+    if(!result.innerText) {
         result.innerText = +input.value;
         input.value = '';
-    }
+    };
 })
 
-reset.addEventListener('click', (event) => {
+reset.addEventListener('click', () => {
     noneClicked();
     result.innerText = '';
     input.value = '';
     sign = undefined;
 })
 
-// input.addEventListener('change', (event) => {
-//     if(result.innerText) {
-//         result.innerText = calc1(+result.innerText)(sign)(+input.value);
-//         input.value = '';
-//     } else {
-//         result.innerText = +input.value;
-//         input.value = '';
-//     }
-// })
 
+equals.addEventListener('click', () => {
+    if(result.innerText && sign) {
+        result.innerText = calc(+result.innerText, sign, +input.value);
+        input.value = '';
+    };
+})
 
 
 
