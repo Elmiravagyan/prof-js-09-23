@@ -1,7 +1,6 @@
 * {
     box-sizing: border-box;
 }
-
 section {
     width: 100%;
     height: 700px;
@@ -9,7 +8,6 @@ section {
     flex-direction: column;
     align-items: center;
 }
-
 .result {
     width: 260px;
     height: 100px;
@@ -19,7 +17,6 @@ section {
     align-items: end;
     font-size: 36px;
 }
-
 .buttons {
     display: grid;
     grid-template-areas:
@@ -30,7 +27,6 @@ section {
         "zero zero dot equal";
     grid-gap: 7px;
 }
-
 .btn {
     width: 60px;
     height: 60px;

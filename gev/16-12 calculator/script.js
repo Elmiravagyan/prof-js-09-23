@@ -36,7 +36,6 @@ operators.forEach(op => {
             operator = op.innerHTML
             result.innerHTML = number1 + operator
         }
-        
     })
 })
 
@@ -73,7 +72,6 @@ negative.addEventListener('click', () => {
         result.innerHTML = number1 + operator + `(${number2})`
     }
 })
-
 
 clear.addEventListener('click', () => {
     number1 = ""

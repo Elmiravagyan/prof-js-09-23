@@ -37,6 +37,7 @@ function getRequest(pageOffset = 0) {
         })
     })
 }
+
 getRequest()
 
 loadMore.addEventListener('click', () => {
