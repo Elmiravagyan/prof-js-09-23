@@ -33,15 +33,15 @@ function displayDataGrid(items) {
     }
 
     const title = document.createElement('div');
-    title.textContent = item.title;
+    title.innerText = item.title;
     gridItem.appendChild(title);
 
     const copyright = document.createElement('div');
-    copyright.textContent = item.rights;
+    copyright.innerText = item.copyright;
     gridItem.appendChild(copyright);
 
     const division = document.createElement('div');
-    division.textContent = item.division;
+    division.innerText = item.division;
     gridItem.appendChild(division);
 
     container.appendChild(gridItem);
@@ -49,6 +49,7 @@ function displayDataGrid(items) {
 }
 
 fetchData(offset, loadAmount);
+
 
 loadMoreBtn.addEventListener('click', () => {
   offset += loadAmount;
