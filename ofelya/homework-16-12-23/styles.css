@@ -9,6 +9,7 @@
     padding: 16px;
     text-align: center;
     background-color: #fff;
+    margin-bottom: 8px;
   }
 
   .grid-item img {
@@ -35,3 +36,4 @@
   body{
 background-color: rgb(230, 212, 188);
   }
+  

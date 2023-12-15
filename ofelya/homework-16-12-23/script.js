@@ -1,8 +1,10 @@
 const container = document.getElementById('container');
 const loadMoreBtn = document.getElementById('load-more-btn');
+const divisionFilter = document.getElementById('divisionFilter')
 
 let offset = 0;
 const loadAmount = 30;
+
 
 function fetchData(offset, limit) {
   fetch(`https://harvardartmuseums.org/browse`)
@@ -54,4 +56,9 @@ fetchData(offset, loadAmount);
 loadMoreBtn.addEventListener('click', () => {
   offset += loadAmount;
   fetchData(offset, loadAmount);
+});
+divisionFilter.addEventListener('input', () => {
+  const searchTerm = divisionFilter.value.trim().toLowerCase();
+  const filteredData = allData.filter(item => item.division.toLowerCase().includes(searchTerm));
+  displayDataGrid(filteredData);
 });
