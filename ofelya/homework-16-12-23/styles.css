@@ -1,0 +1,37 @@
+#container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .grid-item {
+    border: 1px solid #ddd;
+    padding: 16px;
+    text-align: center;
+    background-color: #fff;
+  }
+
+  .grid-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 8px;
+  }
+
+  #load-more-btn {
+    margin-top: 20px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+  }
+
+  #heading {
+
+    color: goldenrod;
+    padding-left: 500px;
+  }
+  body{
+background-color: rgb(230, 212, 188);
+  }
