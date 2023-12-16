@@ -47,3 +47,8 @@ resetAll.addEventListener('click', () => {
     Timer.prototype.resetAllTimers();
 })
 
+
+fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(response => response.json(), err => console.log(err)).then(json => console.log(json));
+
+
