@@ -1,4 +1,4 @@
- const cars = [
+let cars = [
     {
         "_id": "6554c072ad167a956bcaa9f9",
         "available": false,
@@ -87,6 +87,15 @@
         "company": "GLOBOIL",
         "country": "Greece"
     }
+
 ]
-
-
+function extractSelectList(arr1,key) {
+    return arr1.reduce((arr, item) => {
+        if (!arr.includes(item[key])) {
+            arr.push(item[key])
+        }
+        return arr
+    }, []);
+}
+console.log(extractSelectList(cars,'country'))
+console.log(extractSelectList(cars,'company'))

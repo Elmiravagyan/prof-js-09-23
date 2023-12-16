@@ -1,4 +1,4 @@
- const cars = [
+export const cars = [
     {
         "_id": "6554c072ad167a956bcaa9f9",
         "available": false,
@@ -88,5 +88,3 @@
         "country": "Greece"
     }
 ]
-
-
