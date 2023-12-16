@@ -1,0 +1,18 @@
+.image{
+    width: 200px;
+}
+.divElement{
+    width: 200px;
+    padding: 40px;
+    border: 2px solid black;
+    border-radius: 20px 10px 20px 10px;
+}
+#container{
+    display: grid;
+    grid-template-columns: 350px 350px 350px;
+
+}
+#page{
+    display: flex;
+    margin-left: 350px;
+}

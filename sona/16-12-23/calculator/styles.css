@@ -1,0 +1,58 @@
+#result {
+    border-style: solid;
+    border-width:thin;
+    border-radius: 4px;
+    border-color: gray;
+    height: 20px;
+    min-width: 130px;
+    width: fit-content;
+    padding: 4px;
+    margin:4px;
+    background-color:gainsboro;
+}
+
+#actions {
+    width: 400px;
+    padding: 4px;
+}
+
+#top {
+    width: 400px;
+    padding: 4px;
+}
+
+.actionBtns {
+    border-radius: 4px;
+    border-width: thin;
+    border-color: gray;
+    font-size:20px;
+    font-weight: lighter;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 1px 1px 4px;
+    padding: 5px 10px;
+
+
+}
+
+#equals {
+    width: 133px;
+}
+
+#input {
+    width: 133px;
+}
+
+#reset {
+    border-radius: 4px;
+    border-width: thin;
+    border-color: gray;
+}
+.clicked {
+    background-color:darkseagreen;
+}
+
+
+
+

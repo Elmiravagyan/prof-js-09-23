@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="fetch.css">
+</head>
+<body>
+    <div class="container">
+        <div class="searchBox">
+            <div class="searchInputBox">
+                <h2>Search Users</h2>
+                <input type="search" id="searchInput" data-search>
+            </div>
+            <div class="usersLists" data-users-lists></div>
+            <template data-user-template>
+                <div class="userList">
+                    <div class="userId" data-userId></div>
+                    <div class="id" data-id></div>
+                    <div class="title" data-title></div>
+                    <div class="body" data-body></div>
+                </div>
+            </template> 
+        </div>
+    </div>
+
+</div>
+    <script src="fetch.js" defer></script>
+</body>
+</html>
