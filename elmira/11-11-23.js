@@ -47,7 +47,7 @@ users.reduce((teams, user) => {
 
 const response  = {
     schema: [{columnName: 'Name', type: 'string'},{columnName: 'Age', type: 'number'}],
-    data: [['Sam',25],['Ani',22]];
+    data: [['Sam',25],['Ani',22]]
 }
 
 // Output => users = [{ name: 'Sam', age: 25}, { name: 'Ani', age: 22 }]

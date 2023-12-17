@@ -1,0 +1,34 @@
+
+#container{
+
+        display: flex;
+        width: 100%;
+        align-items: center;
+        flex-direction: column;
+}
+
+#input{
+    margin-top: 15px;
+}
+#btnsDiv{
+    margin: 4px;
+}
+
+.startBtn{
+    margin: 4px;
+    background-color: rgb(114, 255, 112);
+    border-color: antiquewhite;
+}
+
+.stopBtn{
+    margin: 4px;
+    background-color: rgb(202, 43, 43);
+    border-color: antiquewhite;
+}
+
+.resetBtn{
+    margin: 4px;
+    background-color: deepskyblue;
+    border-color: antiquewhite;
+}
+

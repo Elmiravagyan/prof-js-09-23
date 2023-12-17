@@ -1,0 +1,61 @@
+.img {
+    width: fit-content;
+    height: 300px;
+    max-width: -webkit-fill-available;
+}
+
+.artElem {
+    border-width: thin;
+    border-style: solid;
+    border-color: gray;
+    display: flex;
+    flex-direction: column;
+    justify-content:left;
+    height: fit-content;
+    width: fit-content;
+    padding: 10px;
+    margin: 10px;
+    gap:0px;
+
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.additionalInfo {
+    color: gray;
+}
+
+.student-item {
+    background-color: #8080804d;
+    width: 300px;
+    height: 400px;
+    border: 1px solid #8080807a;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.desc {
+    margin-top:10px;
+}
+
+.btnsDiv {
+    bottom: 0;
+    left: 50%;
+    text-align: center;
+    padding: 10px; 
+}
+
+.btn {
+    margin:5px;
+    border-radius: 4px;
+    border-width: thin;
+    border-color: gray;
+    font-size:20px;
+    font-weight: lighter;
+    text-align: center;
+    display: inline-block;
+}
