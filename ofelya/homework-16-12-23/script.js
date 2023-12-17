@@ -9,16 +9,10 @@ const loadAmount = 30;
 function fetchData(offset, limit) {
   fetch(`https://harvardartmuseums.org/browse`)
     .then(response => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      return response.json();
+     return response.json();
     })
     .then(data => {
       displayDataGrid(data.records);
-    })
-    .catch(error => {
-      console.error('Error fetching data:', error);
     });
 }
 
